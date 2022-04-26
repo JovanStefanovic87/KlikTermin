@@ -1,0 +1,214 @@
+@import '../scss/variables.scss';
+
+$base-background-color: #303030;
+$base-orange-color: #fc9815;
+$orange-line-color: linear-gradient(to right, #303030, #fc9815, #303030);
+$header-background-color: #202020;
+$base-cal-font-color: rgba(255, 255, 255, 0.801);
+$calendar-weeks-button-bg: linear-gradient(to top, #404040, #606060, #404040);
+$calendar-weeks-button-bg-hover: linear-gradient(to top, #505050, #303030, #303030, #505050);
+$calendar-time_day-color: black;
+$transition: 0.5s;
+
+.visuallyhidden {
+	position: absolute;
+	overflow: hidden;
+	clip: rect(0 0 0 0);
+	height: 1px;
+	width: 1px;
+	margin: -1px;
+	padding: 0;
+	border: 0;
+}
+
+html {
+	height: -webkit-fill-available;
+}
+
+body {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	font-family: Arial, Helvetica, sans-serif;
+	outline: hidden;
+	background-color: $base-background-color;
+}
+
+input,
+textarea,
+button,
+select,
+a,
+i {
+	font-style: normal;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+hr {
+	display: inline-block;
+	width: 100%;
+	height: 3px;
+	border: none;
+	background-image: $orange-line-color;
+}
+
+input {
+	box-sizing: border-box;
+	text-align: center;
+	outline: none;
+	box-shadow: 4px 4px 4px rgba(68, 68, 68, 0.6);
+	-moz-box-shadow: 4px 4px 4px rgba(68, 68, 68, 0.6);
+	-webkit-box-shadow: 4px 4px 4px rgba(68, 68, 68, 0.6);
+}
+
+input[type='button'] {
+	box-sizing: border-box;
+	cursor: pointer;
+	outline: none;
+	overflow: hidden;
+	font: {
+		size: 1.2rem;
+		weight: 600;
+	}
+	text: {
+		decoration: normal;
+		overflow: ellipsis;
+	}
+	border-radius: 12px;
+	box-shadow: 3px 3px 3px rgba(68, 68, 68, 0.6);
+	-moz-box-shadow: 3px 3px 3px rgba(68, 68, 68, 0.6);
+	-webkit-box-shadow: 3px 3px 3px rgba(68, 68, 68, 0.6);
+	transition: all 402ms cubic-bezier(0.68, -0.75, 0.265, 1.75);
+	-webkit-transition: all 402ms cubic-bezier(0.68, -0.75, 0.265, 1.75);
+	color: $base-orange-color;
+	background-image: $calendar-weeks-button-bg;
+	&:hover {
+		background-image: $calendar-weeks-button-bg-hover;
+	}
+	&:active {
+		box-shadow: 1px rgba(0, 0, 0, 0.2) inset;
+		-moz-box-shadow: 1px rgba(0, 0, 0, 0.2) inset;
+		-webkit-box-shadow: 1px rgba(0, 0, 0, 0.2) inset;
+		background-image: linear-gradient(to top, #404040, #505050, #404040);
+	}
+}
+
+input[type='checkbox'] {
+	@extend .visuallyhidden;
+}
+
+input[type='checkbox'] + label {
+	@include noAppearance;
+	display: inline-block;
+	position: relative;
+	height: 40px;
+	width: 40px;
+	top: 3px;
+	margin-right: 0.5rem;
+	border: none;
+	cursor: pointer;
+	z-index: 1000;
+	outline: none;
+	transition: all 0.15s ease-out 0s;
+	color: #fff;
+	background-color: #cbd1d8;
+	&:before {
+		content: 'X';
+		display: block;
+		position: absolute;
+		height: 40px;
+		width: 40px;
+		font: {
+			size: 26.66667px;
+			weight: bold;
+		}
+		cursor: pointer;
+		text-align: center;
+		line-height: 40px;
+		color: red;
+		background: {
+			color: #d0cccb;
+			position: 0 -15px;
+		}
+	}
+	&:after {
+		content: ' ';
+		background: {
+			color: #fffdfd;
+		}
+	}
+}
+input[type='checkbox']:checked + label {
+	&:before {
+		content: '✔';
+		display: inline-block;
+		position: absolute;
+		height: 40px;
+		width: 40px;
+		margin: 0 0 0 -20px;
+		font: {
+			size: 26.66667px;
+			weight: bold;
+		}
+		text-align: center;
+		line-height: 40px;
+		color: green;
+		background-color: $base-orange-color;
+	}
+	&:after {
+		content: '';
+		display: block;
+		position: relative;
+		z-index: 100;
+		background-color: #40e0d0;
+	}
+}
+
+input[type='time']::-webkit-calendar-picker-indicator {
+	background: none;
+	display: none;
+}
+
+footer {
+	display: inline-block;
+	box-sizing: border-box;
+	width: 100%;
+	height: 50px;
+	margin: 20px 0 0 0;
+	z-index: 99999;
+	background-color: $header-background-color;
+	p {
+		margin-left: 10px;
+		color: $base-cal-font-color;
+	}
+}
+
+form {
+	position: absolute;
+	text-align: center;
+	z-index: 301;
+	background-color: rgba(0, 0, 0, 0.92);
+}
+
+select {
+	@include noAppearance;
+	display: inline-block;
+	width: auto;
+	position: relative;
+	padding: 0.2em 1.6em 0.2em 0.2em;
+	border: 2px solid $calendar-time_day-color {
+		radius: 7px;
+	}
+	font-size: 14pt;
+	outline: none;
+	cursor: pointer;
+	transition: $transition;
+	background: {
+		/* image: url("data:image/svg+xml;utf8,<svg fill='gray' height='100%' viewBox='5 6 12 12' width='100%' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>"); */
+		position: calc(100% - 0.5em) 50%;
+		size: 15px;
+		repeat: no-repeat;
+	}
+}

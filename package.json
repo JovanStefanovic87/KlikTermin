@@ -1,0 +1,100 @@
+{
+	"name": "kliktermin",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"dependencies": {
+		"@fortawesome/fontawesome-svg-core": "^1.2.36",
+		"@fortawesome/free-solid-svg-icons": "^5.15.4",
+		"@fortawesome/react-fontawesome": "^0.1.16",
+		"antd": "^4.18.3",
+		"axios": "^0.24.0",
+		"babel-preset-es2015": "^6.24.1",
+		"body-parser": "^1.19.1",
+		"cookie": "^0.4.1",
+		"current-week-number": "^1.0.7",
+		"custom-checkbox-radio-scss": "^1.9.0",
+		"dotenv": "^11.0.0",
+		"eslint-plugin-prettier": "^4.0.0",
+		"express": "^4.17.2",
+		"js-cookie": "^3.0.1",
+		"jsonwebtoken": "^8.5.1",
+		"moment": "^2.29.1",
+		"next": "^12.0.8",
+		"next-cookies": "^2.0.3",
+		"next-images": "^1.8.4",
+		"nodemon": "^2.0.15",
+		"react": "^17.0.2",
+		"react-device-detect": "^2.1.2",
+		"react-dom": "^17.0.2",
+		"react-fontawesome": "^1.7.1",
+		"react-icons": "^4.3.1",
+		"react-query-selector": "^1.5.1",
+		"react-redux": "^7.2.6",
+		"react-router": "^6.2.1",
+		"react-router-dom": "^6.2.1",
+		"react-scroll": "^1.8.4",
+		"react-share": "^4.4.0",
+		"react-simple-timefield": "^3.2.5",
+		"react-spinners": "^0.11.0",
+		"react-textarea-autosize": "^8.3.3",
+		"redux": "^4.1.2",
+		"redux-logger": "^3.0.6",
+		"redux-thunk": "^2.4.1",
+		"sass": "^1.48.0",
+		"sass-loader": "^12.4.0",
+		"scroll-sync-react": "^1.2.0",
+		"start-of-week": "^3.8.0",
+		"styletron-engine-atomic": "^1.4.8",
+		"styletron-react": "^6.0.2",
+		"uuid": "^8.3.2",
+		"validator": "^13.7.0"
+	},
+	"devDependencies": {
+		"@next/eslint-plugin-next": "^12.0.8",
+		"@types/cookie": "^0.4.1",
+		"eslint": "^7.32.0",
+		"eslint-config-next": "^12.0.8",
+		"eslint-plugin-import": "^2.25.4",
+		"eslint-plugin-node": "^11.1.0",
+		"eslint-plugin-promise": "^6.0.0",
+		"eslint-plugin-react": "^7.28.0",
+		"eslint-plugin-react-hooks": "^4.3.0",
+		"eslint-plugin-standard": "^5.0.0",
+		"prettier": "2.5.1",
+		"husky": "3.0.5",
+    	"lint-staged": "9.2.5",
+		"prettier-eslint": "^13.0.0",
+		"redux-devtools-extension": "^2.13.8",
+		"url-loader": "^4.1.1"
+	},
+	"husky": {
+		"hooks": {
+		  "pre-commit": "lint-staged"
+		}
+	  },
+	  "lint-staged": {
+		"*.js": ["prettier --write", "git add"]
+	  },
+
+	"scripts": {
+		"predeploy": "npm run build",
+		"deploy": "gh-pages -d dist",
+		"dev": "next",
+		"build": "next build",
+		"lint": "next lint",
+		"start": "next start -p 3600",
+		"check": "prettier --check"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/soxdarko/KT2.git"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/soxdarko/KT2/issues"
+	},
+	"homepage": "https://github.com/soxdarko/KT2#readme"
+}
