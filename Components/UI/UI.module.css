@@ -1,0 +1,3017 @@
+@charset "UTF-8";
+.Spacer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.Loader {
+  position: fixed;
+  top: 45vh;
+}
+
+.Block {
+  display: block !important;
+}
+
+.FormLayout {
+  position: absolute;
+  text-align: center;
+  z-index: 301;
+  background-color: rgba(0, 0, 0, 0.92);
+}
+
+.Form table {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  width: 95%;
+  height: auto;
+  max-height: calc(100vh - 260px);
+  margin: 10px auto 20px auto;
+  overflow: auto;
+  font-size: 22px;
+  border: 2px solid black;
+}
+
+.Form table thead {
+  display: block;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  margin: 0;
+  background-color: #202020;
+}
+
+.Form table thead tr {
+  color: #fc9815;
+}
+
+.Form table thead tr th {
+  width: 45vw;
+  min-width: 300px;
+}
+
+.Form table tbody {
+  display: block;
+  margin: 0;
+}
+
+.Form table tbody .Clients {
+  cursor: pointer;
+  color: white;
+}
+
+.Form table tbody .Clients:nth-child(odd) {
+  background-color: #202020;
+}
+
+.Form table tbody .Clients:nth-child(even) {
+  background-color: #505050;
+}
+
+.Form table tbody .Clients td {
+  width: 45vw;
+  min-width: 300px;
+  border: 2px solid black;
+}
+
+.Form table tbody .Clients:hover {
+  color: black;
+  background-color: #fc9815;
+}
+
+.Form table tbody .ClientsMob {
+  padding: 5px 0 4px 0;
+  cursor: pointer;
+  border-top: 6px ridge gray;
+  color: white;
+}
+
+.Form table tbody .ClientsMob:nth-child(odd) {
+  background-image: -webkit-gradient(linear, left bottom, left top, from(#202020), color-stop(#303030), to(#202020));
+  background-image: linear-gradient(to top, #202020, #303030, #202020);
+}
+
+.Form table tbody .ClientsMob:nth-child(even) {
+  background-image: -webkit-gradient(linear, left bottom, left top, from(#101010), color-stop(#202020), to(#101010));
+  background-image: linear-gradient(to top, #101010, #202020, #101010);
+}
+
+.Form table tbody .ClientsMob td {
+  width: 100vw;
+  min-width: 300px;
+}
+
+.Form table tbody .Services {
+  cursor: pointer;
+  color: white;
+}
+
+.Form table tbody .Services:nth-child(odd) {
+  background-color: #202020;
+}
+
+.Form table tbody .Services:nth-child(even) {
+  background-color: #505050;
+}
+
+.Form table tbody .Services td {
+  width: 45vw;
+  min-width: 300px;
+  border: 2px solid black;
+}
+
+.Form table tbody .ServicesMob {
+  padding: 5px 0 4px 0;
+  cursor: pointer;
+  border-top: 6px ridge gray;
+  color: white;
+}
+
+.Form table tbody .ServicesMob:nth-child(odd) {
+  background-image: -webkit-gradient(linear, left bottom, left top, from(#202020), color-stop(#303030), to(#202020));
+  background-image: linear-gradient(to top, #202020, #303030, #202020);
+}
+
+.Form table tbody .ServicesMob:nth-child(even) {
+  background-image: -webkit-gradient(linear, left bottom, left top, from(#101010), color-stop(#202020), to(#101010));
+  background-image: linear-gradient(to top, #101010, #202020, #101010);
+}
+
+.Form table tbody .ServicesMob td {
+  width: 80vw;
+  vertical-align: middle;
+  word-break: break-all;
+}
+
+.Form input[type='password'],
+.Form [type='text'],
+.Form [type='number'] {
+  width: 400px;
+  max-width: 400px;
+  height: 33px;
+  font-size: 20px;
+  border-radius: 7px;
+}
+
+.Form input[type='password']:focus,
+.Form [type='text']:focus,
+.Form [type='number']:focus {
+  font-size: 21px;
+  border: 5px double black;
+}
+
+.Form .MobileOperator {
+  -webkit-transition: none;
+  transition: none;
+  border: px double rgba(128, 128, 128, 0.541);
+  /* &:hover {
+			background-image: url("data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z"/></svg>");
+		} */
+}
+
+.Form .InvalidInput {
+  border-color: red;
+}
+
+.Form .PhoneNumber {
+  width: 320px;
+  margin: 20px auto 5px auto;
+}
+
+.Form .MobileOperatorMob {
+  display: inline-block;
+  width: 80px;
+  height: 31px;
+  -webkit-transition: none;
+  transition: none;
+  margin: 20px auto 5px auto;
+  font-size: 1rem !important;
+  border: 2px double rgba(128, 128, 128, 0.541);
+  /* &:hover {
+			background-image: url("data:image/svg+xml;utf8,<svg fill='orange' height='100%' viewBox='5 6 12 12' width='100%' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+		} */
+}
+
+.Form .PhoneNumberMob {
+  display: inline-block;
+  width: calc(97% - 80px);
+  max-width: 320px;
+  font-size: 1rem !important;
+}
+
+.Form h3 {
+  margin: 10px 0 5px 0;
+  font-size: 1.4rem;
+  color: white;
+}
+
+.Form h4 {
+  margin-bottom: 0;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.FormOverlay {
+  position: absolute;
+  /* width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.582); */
+}
+
+.FormOverlayMob {
+  /* @extend .FormOverlay;
+	position: fixed; */
+  margin: -5px;
+  /* z-index: 99999998; */
+}
+
+.FormTitle {
+  margin: 10px 0 10px 0;
+  font-size: 1.7rem;
+  color: #fc9815;
+}
+
+.FormTitle:after {
+  content: '';
+  position: absolute;
+  top: 40px;
+  right: 0;
+  width: 100%;
+  height: 1px;
+  background-image: -webkit-gradient(linear, left top, right top, from(#303030), color-stop(#fc9815), to(#303030));
+  background-image: linear-gradient(to right, #303030, #fc9815, #303030);
+  -webkit-background-image: -webkit-gradient(linear, left top, right top, from(#303030), color-stop(#fc9815), to(#303030));
+  -webkit-background-image: linear-gradient(to right, #303030, #fc9815, #303030);
+  -moz-background-image: linear-gradient(to right, #303030, #fc9815, #303030);
+  -o-background-image: linear-gradient(to right, #303030, #fc9815, #303030);
+  -ms-background-image: linear-gradient(to right, #303030, #fc9815, #303030);
+}
+
+.FormTitleMob {
+  margin: 5px 0 30px 0;
+  font-size: 6vmin;
+  color: #fc9815;
+}
+
+.Icon {
+  display: inline-block;
+  position: relative;
+  padding: 1px 5px 0 10px;
+  cursor: pointer;
+  color: #fecf93;
+}
+
+.input, .InformationsInput, .InformationsInputMob {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  text-align: center;
+  outline: none;
+  box-shadow: 4px 4px 4px rgba(68, 68, 68, 0.6);
+  -moz-box-shadow: 4px 4px 4px rgba(68, 68, 68, 0.6);
+  -webkit-box-shadow: 4px 4px 4px rgba(68, 68, 68, 0.6);
+}
+
+.NoBorder {
+  border: none !important;
+}
+
+.Danger {
+  color: red !important;
+}
+
+@-webkit-keyframes modalinPC {
+  0% {
+    margin-top: -100vh;
+    opacity: 0;
+  }
+  30% {
+    opacity: 0;
+  }
+  60% {
+    margin-top: 2vh;
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    margin-top: 0;
+  }
+}
+
+@keyframes modalinPC {
+  0% {
+    margin-top: -100vh;
+    opacity: 0;
+  }
+  30% {
+    opacity: 0;
+  }
+  60% {
+    margin-top: 2vh;
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    margin-top: 0;
+  }
+}
+
+@-webkit-keyframes modaloutPC {
+  0% {
+    margin-top: 0;
+    opacity: 1;
+  }
+  30% {
+    margin-top: 2vh;
+  }
+  50% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+    margin-top: -100vh;
+  }
+}
+
+@keyframes modaloutPC {
+  0% {
+    margin-top: 0;
+    opacity: 1;
+  }
+  30% {
+    margin-top: 2vh;
+  }
+  50% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+    margin-top: -100vh;
+  }
+}
+
+.modalInPC {
+  animation: modalinPC 1000ms ease-in-out forwards;
+  -webkit-animation: modalinPC 1000ms ease-in-out forwards;
+}
+
+.modalOutPC {
+  animation: modaloutPC 1000ms ease-in-out forwards;
+  -webkit-animation: modaloutPC 1000ms ease-in-out forwards;
+}
+
+@-webkit-keyframes modalinMob {
+  0% {
+    opacity: 0;
+    bottom: -100vh;
+  }
+  30% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 1;
+    bottom: 10vh;
+  }
+  100% {
+    opacity: 1;
+    bottom: 7vh;
+  }
+}
+
+@keyframes modalinMob {
+  0% {
+    opacity: 0;
+    bottom: -100vh;
+  }
+  30% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 1;
+    bottom: 10vh;
+  }
+  100% {
+    opacity: 1;
+    bottom: 7vh;
+  }
+}
+
+@-webkit-keyframes modaloutMob {
+  0% {
+    opacity: 1;
+    bottom: 7vh;
+  }
+  30% {
+    bottom: 10vh;
+  }
+  50% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+    bottom: -100vh;
+  }
+}
+
+@keyframes modaloutMob {
+  0% {
+    opacity: 1;
+    bottom: 7vh;
+  }
+  30% {
+    bottom: 10vh;
+  }
+  50% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+    bottom: -100vh;
+  }
+}
+
+.modalInMob {
+  animation: modalinMob 1000ms ease-in-out forwards;
+  -webkit-animation: modalinMob 1000ms ease-in-out forwards;
+}
+
+.modalOutMob {
+  animation: modaloutMob 1000ms ease-in-out forwards;
+  -webkit-animation: modaloutMob 1000ms ease-in-out forwards;
+}
+
+@-webkit-keyframes backdropin {
+  0% {
+    opacity: 0;
+    z-index: -1;
+  }
+  50% {
+    z-index: 499;
+  }
+  100% {
+    opacity: 1;
+    z-index: 499;
+  }
+}
+
+@keyframes backdropin {
+  0% {
+    opacity: 0;
+    z-index: -1;
+  }
+  50% {
+    z-index: 499;
+  }
+  100% {
+    opacity: 1;
+    z-index: 499;
+  }
+}
+
+@-webkit-keyframes backdropout {
+  0% {
+    opacity: 1;
+    z-index: 499;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    z-index: -1;
+  }
+}
+
+@keyframes backdropout {
+  0% {
+    opacity: 1;
+    z-index: 499;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    z-index: -1;
+  }
+}
+
+@-webkit-keyframes searchbaropen {
+  from {
+    height: 0px;
+  }
+  to {
+    height: 20px;
+  }
+}
+
+@keyframes searchbaropen {
+  from {
+    height: 0px;
+  }
+  to {
+    height: 20px;
+  }
+}
+
+@-webkit-keyframes searchbarclose {
+  from {
+    height: 20px;
+  }
+  to {
+    height: 0px;
+  }
+}
+
+@keyframes searchbarclose {
+  from {
+    height: 20px;
+  }
+  to {
+    height: 0px;
+  }
+}
+
+.backdropIn {
+  animation: backdropin 300ms ease-in-out forwards;
+  -webkit-animation: backdropin 300ms ease-in-out forwards;
+}
+
+.backdropOut {
+  animation: backdropout 300ms ease-in-out forwards;
+  -webkit-animation: backdropout 300ms ease-in-out forwards;
+}
+
+.searchBarOpen {
+  animation: searchbaropen 600ms ease-in-out forwards;
+  -webkit-animation: backdropin 600ms ease-in-out forwards;
+}
+
+.searchBarClose {
+  animation: searchbarclose 600ms ease-in-out forwards;
+  -webkit-animation: backdropout 600ms ease-in-out forwards;
+}
+
+@-webkit-keyframes modalup {
+  from {
+    margin-bottom: -100vh;
+    opacity: 0;
+  }
+  to {
+    margin-bottom: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes modalup {
+  from {
+    margin-bottom: -100vh;
+    opacity: 0;
+  }
+  to {
+    margin-bottom: 0;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes modaldown {
+  from {
+    margin-bottom: 0;
+    opacity: 1;
+  }
+  to {
+    margin-bottom: -100vh;
+    opacity: 0;
+  }
+}
+
+@keyframes modaldown {
+  from {
+    margin-bottom: 0;
+    opacity: 1;
+  }
+  to {
+    margin-bottom: -100vh;
+    opacity: 0;
+  }
+}
+
+.modalUp {
+  animation: modalup 1000ms ease-in-out forwards;
+  -webkit-animation: modalup 1000ms ease-in-out forwards;
+}
+
+.modalDown {
+  animation: modaldown 1000ms ease-in-out forwards;
+  -webkit-animation: modaldown 1000ms ease-in-out forwards;
+}
+
+@-webkit-keyframes slideinleft {
+  from {
+    margin-left: 100%;
+    opacity: 0;
+  }
+  to {
+    margin-left: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes slideinleft {
+  from {
+    margin-left: 100%;
+    opacity: 0;
+  }
+  to {
+    margin-left: 0;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes slideoutleft {
+  from {
+    margin-left: 0;
+    opacity: 1;
+  }
+  to {
+    margin-left: 100%;
+    opacity: 0;
+  }
+}
+
+@keyframes slideoutleft {
+  from {
+    margin-left: 0;
+    opacity: 1;
+  }
+  to {
+    margin-left: 100%;
+    opacity: 0;
+  }
+}
+
+.slideInLeft {
+  -webkit-animation: slideinleft 1000ms ease-in-out forwards;
+          animation: slideinleft 1000ms ease-in-out forwards;
+}
+
+.slideOutLeft {
+  -webkit-animation: slideoutleft 1000ms ease-in-out forwards;
+          animation: slideoutleft 1000ms ease-in-out forwards;
+}
+
+.TabContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  z-index: 999;
+}
+
+.TabContainer form {
+  display: block;
+  position: relative;
+  background-color: transparent;
+}
+
+.TabContainer .TabButtonContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 98vw;
+  max-width: 600px;
+  margin: auto;
+  margin-top: 20px;
+  justify-self: center;
+}
+
+.TabContainer .TabButtonContainer button {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  overflow: hidden;
+  font-size: 1.2rem;
+  font-weight: 600;
+  -webkit-text-decoration: normal;
+          text-decoration: normal;
+  text-overflow: ellipsis;
+  border-radius: 12px;
+  box-shadow: 3px 3px 3px rgba(68, 68, 68, 0.6);
+  -moz-box-shadow: 3px 3px 3px rgba(68, 68, 68, 0.6);
+  -webkit-box-shadow: 3px 3px 3px rgba(68, 68, 68, 0.6);
+  transition: all 402ms cubic-bezier(0.68, -0.75, 0.265, 1.75);
+  -webkit-transition: all 402ms cubic-bezier(0.68, -0.75, 0.265, 1.75);
+  color: #fc9815;
+  background-image: -webkit-gradient(linear, left bottom, left top, from(#404040), color-stop(#606060), to(#404040));
+  background-image: linear-gradient(to top, #404040, #606060, #404040);
+  width: 100%;
+  height: 2em;
+}
+
+.TabContainer .TabButtonContainer button:active {
+  box-shadow: 1px rgba(0, 0, 0, 0.2) inset;
+  -moz-box-shadow: 1px rgba(0, 0, 0, 0.2) inset;
+  -webkit-box-shadow: 1px rgba(0, 0, 0, 0.2) inset;
+  background-image: -webkit-gradient(linear, left bottom, left top, from(#404040), color-stop(#505050), to(#404040));
+  background-image: linear-gradient(to top, #404040, #505050, #404040);
+}
+
+.TabContainer .TabButtonContainer button:hover {
+  background-image: -webkit-gradient(linear, left bottom, left top, from(#505050), color-stop(#303030), color-stop(#303030), to(#505050));
+  background-image: linear-gradient(to top, #505050, #303030, #303030, #505050);
+}
+
+.TabContainerMob {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  z-index: 999;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.TabContainerMob form {
+  display: block;
+  position: relative;
+  background-color: transparent;
+}
+
+.TabContainerMob .TabButtonContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 98vw;
+  max-width: 600px;
+  margin: auto;
+  margin-top: 20px;
+  justify-self: center;
+}
+
+.TabContainerMob .TabButtonContainer button {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  overflow: hidden;
+  font-size: 1.2rem;
+  font-weight: 600;
+  -webkit-text-decoration: normal;
+          text-decoration: normal;
+  text-overflow: ellipsis;
+  border-radius: 12px;
+  box-shadow: 3px 3px 3px rgba(68, 68, 68, 0.6);
+  -moz-box-shadow: 3px 3px 3px rgba(68, 68, 68, 0.6);
+  -webkit-box-shadow: 3px 3px 3px rgba(68, 68, 68, 0.6);
+  transition: all 402ms cubic-bezier(0.68, -0.75, 0.265, 1.75);
+  -webkit-transition: all 402ms cubic-bezier(0.68, -0.75, 0.265, 1.75);
+  color: #fc9815;
+  background-image: -webkit-gradient(linear, left bottom, left top, from(#404040), color-stop(#606060), to(#404040));
+  background-image: linear-gradient(to top, #404040, #606060, #404040);
+  width: 100%;
+  height: 2em;
+}
+
+.TabContainerMob .TabButtonContainer button:active {
+  box-shadow: 1px rgba(0, 0, 0, 0.2) inset;
+  -moz-box-shadow: 1px rgba(0, 0, 0, 0.2) inset;
+  -webkit-box-shadow: 1px rgba(0, 0, 0, 0.2) inset;
+  background-image: -webkit-gradient(linear, left bottom, left top, from(#404040), color-stop(#505050), to(#404040));
+  background-image: linear-gradient(to top, #404040, #505050, #404040);
+}
+
+.TabContainerMob .TabButtonContainer button:hover {
+  background-image: -webkit-gradient(linear, left bottom, left top, from(#505050), color-stop(#303030), color-stop(#303030), to(#505050));
+  background-image: linear-gradient(to top, #505050, #303030, #303030, #505050);
+}
+
+.DescriptionContainer {
+  position: absolute;
+  width: 100vw;
+  margin-top: 50px;
+  z-index: 99999999;
+}
+
+.DescriptionContainer .DescriptionArea {
+  display: block;
+  width: 50vw;
+  max-width: 500px;
+  margin: 20px auto 0 auto;
+  font-size: 1rem;
+  z-index: 99999999;
+}
+
+.DescriptionContainer h3 {
+  font-size: 1.4rem;
+  text-align: center;
+  color: white;
+  z-index: 99999999;
+}
+
+.DescriptionContainer .SaveDescription {
+  display: block;
+  position: relative;
+  margin: 20px auto 0 auto;
+  z-index: 99999999;
+}
+
+.DescriptionContainer .ExitDescription {
+  display: block;
+  position: relative;
+  margin: 20px auto 0 auto;
+  z-index: 99999999;
+  color: red;
+}
+
+.DescriptionContainerMob {
+  position: absolute;
+  width: 98vw;
+  z-index: 9999999;
+}
+
+.DescriptionContainerMob h3 {
+  /* margin: 10px 0 5px 0;
+		font-size: 1.4rem; */
+  text-align: center;
+  color: white;
+  z-index: 99999999;
+}
+
+.DescriptionContainerMob .DescriptionArea {
+  width: 98vw;
+}
+
+.addForSelected + label {
+  height: 30px !important;
+  width: 30px !important;
+  top: 3px;
+  margin-right: 0.5rem;
+  border: none;
+  cursor: pointer;
+  z-index: 1000;
+  outline: none;
+  -webkit-transition: all 0.15s ease-out 0s;
+  transition: all 0.15s ease-out 0s;
+  color: #fff;
+  background-color: #cbd1d8;
+}
+
+.addForSelected + label:before {
+  content: 'x';
+  display: block;
+  position: absolute;
+  height: 30px !important;
+  width: 30px !important;
+  font-size: 30px !important;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+  line-height: 30px !important;
+  color: red;
+  background-color: #d0cccb;
+  background-position: 0 -15px;
+}
+
+.addForSelected + label:after {
+  content: ' ';
+  background-color: #fffdfd;
+}
+
+.addForSelected:checked + label:before {
+  content: '✔';
+  display: inline-block;
+  position: absolute;
+  height: 30px !important;
+  width: 30px !important;
+  margin: 0 !important;
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 30px !important;
+  color: green;
+  background-color: #fc9815;
+}
+
+.addForSelected:checked + label:after {
+  content: '';
+  display: block;
+  position: relative;
+  z-index: 100;
+  background-color: #40e0d0;
+}
+
+.ButtonWrapperMob {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  height: 14vmin;
+  padding: 4px;
+  -webkit-box-shadow: #fc9815 0 -3px 3px;
+          box-shadow: #fc9815 0 -3px 3px;
+  z-index: 99999999;
+  background-color: #161616;
+}
+
+.ButtonWrapperMob .Btn_forward, .ButtonWrapperMob .Btn_Add {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  overflow: hidden;
+  font-size: 1.2rem;
+  font-weight: 600;
+  -webkit-text-decoration: normal;
+          text-decoration: normal;
+  text-overflow: ellipsis;
+  border-radius: 12px;
+  box-shadow: 3px 3px 3px rgba(68, 68, 68, 0.6);
+  -moz-box-shadow: 3px 3px 3px rgba(68, 68, 68, 0.6);
+  -webkit-box-shadow: 3px 3px 3px rgba(68, 68, 68, 0.6);
+  transition: all 402ms cubic-bezier(0.68, -0.75, 0.265, 1.75);
+  -webkit-transition: all 402ms cubic-bezier(0.68, -0.75, 0.265, 1.75);
+  color: #fc9815;
+  background-image: -webkit-gradient(linear, left bottom, left top, from(#404040), color-stop(#606060), to(#404040));
+  background-image: linear-gradient(to top, #404040, #606060, #404040);
+  display: block;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  width: 25vmin;
+  height: 9vmin;
+  font-size: 7vmin;
+  border-radius: 10px;
+  color: #fc9815;
+}
+
+.ButtonWrapperMob .Btn_forward:active, .ButtonWrapperMob .Btn_Add:active {
+  box-shadow: 1px rgba(0, 0, 0, 0.2) inset;
+  -moz-box-shadow: 1px rgba(0, 0, 0, 0.2) inset;
+  -webkit-box-shadow: 1px rgba(0, 0, 0, 0.2) inset;
+  background-image: -webkit-gradient(linear, left bottom, left top, from(#404040), color-stop(#505050), to(#404040));
+  background-image: linear-gradient(to top, #404040, #505050, #404040);
+}
+
+.ButtonWrapperMob .Btn_forward:active, .ButtonWrapperMob .Btn_Add:active {
+  box-shadow: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  background-image: -webkit-gradient(linear, left bottom, left top, from(#404040), color-stop(#505050), to(#404040));
+  background-image: linear-gradient(to top, #404040, #505050, #404040);
+}
+
+.Backdrop {
+  display: block;
+  opacity: 0;
+  position: fixed;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  z-index: -100;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.Rounded {
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.InputText, .InformationsInput, .InformationsInputMob, .ReadOnly, .SelectInputText, .SelectInputTextMob, .SelectServiceForEditMob {
+  display: block;
+  width: 97% !important;
+  margin: 20px auto 5px auto;
+  font-size: 18px !important;
+}
+
+.InputTextMob, .ReadOnlyMob {
+  display: block;
+  width: 97% !important;
+  margin: 20px auto 5px auto;
+  font-size: 1rem !important;
+}
+
+.InformationsInput, .InformationsInputMob {
+  max-width: 400px !important;
+  height: 170px !important;
+  text-align: left;
+  border-radius: 7px;
+}
+
+.InformationsInputMob {
+  height: 35vmin !important;
+}
+
+.ReadOnly {
+  pointer-events: none;
+  background-color: #757575;
+}
+
+.ReadOnlyMob {
+  pointer-events: none;
+  background-color: #757575;
+}
+
+.SelectInputText, .SelectInputTextMob, .SelectServiceForEditMob {
+  max-width: 400px !important;
+  text-align-last: center;
+}
+
+.SelectInputTextMob, .SelectServiceForEditMob {
+  max-width: 400px !important;
+  text-align-last: center;
+}
+
+.SelectServiceForEditMob {
+  margin-bottom: 100px !important;
+  margin-top: -35px !important;
+}
+
+.InvalidInput {
+  border-color: red;
+}
+
+/* .Form {
+	position: fixed;
+	overflow: auto;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	z-index: 301;
+	table {
+		display: flex;
+		position: relative;
+		flex-direction: column;
+		justify-content: flex-start;
+		width: 95%;
+		height: auto;
+		max-height: calc(100vh - 260px);
+		margin: 10px auto 20px auto;
+		overflow: auto;
+		font-size: 22px;
+		border: 2px solid black;
+		thead {
+			display: block;
+			position: sticky;
+			top: 0;
+			margin: 0;
+			background-color: $header-background-color;
+			tr {
+				color: $base-orange-color;
+				th {
+					width: 45vw;
+					min-width: 300px;
+				}
+			}
+		}
+		tbody {
+			display: block;
+			margin: 0;
+			.Clients {
+				cursor: pointer;
+				color: white;
+				&:nth-child(odd) {
+					background-color: $header-background-color;
+				}
+				&:nth-child(even) {
+					background-color: $form-even-row-color;
+				}
+				td {
+					width: 45vw;
+					min-width: 300px;
+					border: 2px solid black;
+				}
+				&:hover {
+					color: black;
+					background-color: $base-orange-color;
+				}
+			}
+			.ClientsMob {
+				padding: 5px 0 4px 0;
+				cursor: pointer;
+				border-top: 6px ridge gray;
+				color: white;
+				&:nth-child(odd) {
+					background-image: $form-row-bg1;
+				}
+				&:nth-child(even) {
+					background-image: $form-row-bg2;
+				}
+				td {
+					width: 100vw;
+					min-width: 300px;
+				}
+			}
+			.Services {
+				cursor: pointer;
+				color: white;
+				&:nth-child(odd) {
+					background-color: $header-background-color;
+				}
+				&:nth-child(even) {
+					background-color: $form-even-row-color;
+				}
+
+				td {
+					width: 45vw;
+					min-width: 300px;
+					border: 2px solid black;
+				}
+			}
+			.ServicesMob {
+				padding: 5px 0 4px 0;
+				cursor: pointer;
+				border-top: 6px ridge gray;
+				color: white;
+				&:nth-child(odd) {
+					background-image: $form-row-bg1;
+				}
+				&:nth-child(even) {
+					background-image: $form-row-bg2;
+				}
+				td {
+					width: 80vw;
+					vertical-align: middle;
+					word-break: break-all;
+				}
+			}
+		}
+	}
+	input[type='password'],
+	[type='text'],
+	[type='number'] {
+		width: 400px;
+		max-width: 400px;
+		height: 33px;
+		font-size: 20px;
+		border-radius: 7px;
+		&:focus {
+			font-size: 21px;
+			border: 5px double black;
+		}
+	}
+	.MobileOperator {
+		transition: none;
+		border: px double rgba(128, 128, 128, 0.541);
+		&:hover {
+			background-image: url("data:image/svg+xml;utf8,<svg fill='orange' height='100%' viewBox='5 6 12 12' width='100%' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+		}
+	}
+	.InvalidInput {
+		border-color: red;
+	}
+	.PhoneNumber {
+		width: 320px;
+		margin: 20px auto 5px auto;
+	}
+	.MobileOperatorMob {
+		display: inline-block;
+		width: 80px;
+		height: 31px;
+		transition: none;
+		margin: 20px auto 5px auto;
+		font-size: 1rem !important;
+		border: 2px double rgba(128, 128, 128, 0.541);
+		&:hover {
+			background-image: url("data:image/svg+xml;utf8,<svg fill='orange' height='100%' viewBox='5 6 12 12' width='100%' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+		}
+	}
+	.PhoneNumberMob {
+		display: inline-block;
+		width: calc(97% - 80px);
+		max-width: 320px;
+		font-size: 1rem !important;
+	}
+	h3 {
+		margin: 10px 0 5px 0;
+		font-size: 1.4rem;
+		color: white;
+	}
+	h4 {
+		margin-bottom: 0;
+		color: rgba(black, 0.5);
+	}
+}
+
+.FormOverlay {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.582);
+}
+
+.FormOverlayMob {
+	@extend .FormOverlay;
+	position: fixed;
+	margin: -5px;
+	z-index: 99999998;
+}
+
+.FormTitle {
+	margin: 10px 0 10px 0;
+	font-size: 1.7rem;
+	color: $base-orange-color;
+	&:after {
+		content: '';
+		position: absolute;
+		top: 40px;
+		right: 0;
+		width: 100%;
+		height: 1px;
+		background-image: $orange-line-color;
+		-webkit-background-image: $orange-line-color;
+		-moz-background-image: $orange-line-color;
+		-o-background-image: $orange-line-color;
+		-ms-background-image: $orange-line-color;
+	}
+}
+
+.FormTitleMob {
+	margin: 5px 0 30px 0;
+	font-size: 6vmin;
+	color: $base-orange-color;
+} */
+.Filter {
+  display: block;
+  position: relative;
+  width: 80%;
+  margin: 8px auto 0 auto;
+  padding: 6px;
+  font-size: 16px;
+}
+
+.SubmitButton {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  overflow: hidden;
+  font-size: 1.2rem;
+  font-weight: 600;
+  -webkit-text-decoration: normal;
+          text-decoration: normal;
+  text-overflow: ellipsis;
+  border-radius: 12px;
+  box-shadow: 3px 3px 3px rgba(68, 68, 68, 0.6);
+  -moz-box-shadow: 3px 3px 3px rgba(68, 68, 68, 0.6);
+  -webkit-box-shadow: 3px 3px 3px rgba(68, 68, 68, 0.6);
+  transition: all 402ms cubic-bezier(0.68, -0.75, 0.265, 1.75);
+  -webkit-transition: all 402ms cubic-bezier(0.68, -0.75, 0.265, 1.75);
+  color: #fc9815;
+  background-image: -webkit-gradient(linear, left bottom, left top, from(#404040), color-stop(#606060), to(#404040));
+  background-image: linear-gradient(to top, #404040, #606060, #404040);
+  display: inline-block;
+  width: 30%;
+  max-width: 300px;
+  height: 35px;
+  margin: 40px auto 5px auto;
+}
+
+.SubmitButton:active {
+  box-shadow: 1px rgba(0, 0, 0, 0.2) inset;
+  -moz-box-shadow: 1px rgba(0, 0, 0, 0.2) inset;
+  -webkit-box-shadow: 1px rgba(0, 0, 0, 0.2) inset;
+  background-image: -webkit-gradient(linear, left bottom, left top, from(#404040), color-stop(#505050), to(#404040));
+  background-image: linear-gradient(to top, #404040, #505050, #404040);
+}
+
+.SubmitButton:hover {
+  background-image: -webkit-gradient(linear, left bottom, left top, from(#505050), color-stop(#303030), color-stop(#303030), to(#505050));
+  background-image: linear-gradient(to top, #505050, #303030, #303030, #505050);
+}
+
+.SubmitButtonMob {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  overflow: hidden;
+  font-size: 1.2rem;
+  font-weight: 600;
+  -webkit-text-decoration: normal;
+          text-decoration: normal;
+  text-overflow: ellipsis;
+  border-radius: 12px;
+  box-shadow: 3px 3px 3px rgba(68, 68, 68, 0.6);
+  -moz-box-shadow: 3px 3px 3px rgba(68, 68, 68, 0.6);
+  -webkit-box-shadow: 3px 3px 3px rgba(68, 68, 68, 0.6);
+  transition: all 402ms cubic-bezier(0.68, -0.75, 0.265, 1.75);
+  -webkit-transition: all 402ms cubic-bezier(0.68, -0.75, 0.265, 1.75);
+  color: #fc9815;
+  background-image: -webkit-gradient(linear, left bottom, left top, from(#404040), color-stop(#606060), to(#404040));
+  background-image: linear-gradient(to top, #404040, #606060, #404040);
+  display: inline-block;
+  width: 70%;
+  max-width: 300px;
+  height: 40px;
+  margin: 20px auto 5px auto;
+}
+
+.SubmitButtonMob:active {
+  box-shadow: 1px rgba(0, 0, 0, 0.2) inset;
+  -moz-box-shadow: 1px rgba(0, 0, 0, 0.2) inset;
+  -webkit-box-shadow: 1px rgba(0, 0, 0, 0.2) inset;
+  background-image: -webkit-gradient(linear, left bottom, left top, from(#404040), color-stop(#505050), to(#404040));
+  background-image: linear-gradient(to top, #404040, #505050, #404040);
+}
+
+.SubmitButtonMob:hover {
+  background-image: -webkit-gradient(linear, left bottom, left top, from(#505050), color-stop(#303030), color-stop(#303030), to(#505050));
+  background-image: linear-gradient(to top, #505050, #303030, #303030, #505050);
+}
+
+.FormButtonCloseMob {
+  display: block;
+  width: 50%;
+  height: 40px;
+  margin: 20px auto 5px auto;
+  color: orangered !important;
+}
+
+.FormButton {
+  display: inline-block;
+  width: 30%;
+  max-width: 300px;
+  height: 35px;
+  margin: 20px auto 5px auto;
+}
+
+.FormButtonClose {
+  display: inline-block;
+  width: 30%;
+  max-width: 300px;
+  height: 35px;
+  margin: 20px auto 5px auto;
+  color: orangered !important;
+}
+
+.FormButtonMob {
+  display: block;
+  width: 70%;
+  height: 40px;
+  margin: 20px auto 5px auto;
+  font-size: 5vmin !important;
+}
+
+.radioContainer {
+  display: inline-block;
+  position: absolute;
+  margin-top: 27.5vw;
+  border-radius: 50%;
+  border: none;
+  z-index: 300;
+}
+
+.radiolbl {
+  display: inline-block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.radiolbl input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  position: absolute;
+  border: none;
+  top: 0;
+  left: 0;
+  height: 26px;
+  width: 26px;
+  background: radial-gradient(circle, rgba(9, 14, 39, 0.664) 23%, rgba(99, 101, 129, 0.938) 36%, rgba(99, 101, 129, 0.486) 40%);
+  border-radius: 50%;
+  border: none;
+}
+
+/* On mouse-over, add a grey background color */
+.radiolbl:hover input ~ .checkmark {
+  -webkit-transform: scale(1.2, 1.2);
+          transform: scale(1.2, 1.2);
+  background: radial-gradient(circle, rgba(15, 28, 93, 0.76) 23%, rgba(89, 92, 128, 0.979) 36%, rgba(92, 94, 126, 0.781) 40%);
+}
+
+/* When the radio button is checked, add a blue background */
+.radiolbl input:checked ~ .checkmark {
+  background: radial-gradient(#fc9815 60%, #fc9815 36%, rgba(252, 152, 21, 0.8) 40%);
+  -webkit-transition: ease-out 1.5s;
+  transition: ease-out 1.5s;
+  -webkit-box-shadow: 0 0 3px 3px #fc9815;
+          box-shadow: 0 0 3px 3px #fc9815;
+  -webkit-transform: rotateY(360deg) scale(1.1, 1.1);
+          transform: rotateY(360deg) scale(1.1, 1.1);
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+  content: '';
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.radiolbl input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.radiolbl .checkmark:after {
+  top: 8px;
+  left: 8px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #eeff00;
+}
+
+.radio {
+  cursor: pointer;
+  margin: 0 10px 0 10px;
+  border-radius: 50%;
+  z-index: 9;
+  opacity: 1;
+}
+
+.DesciptionLabel {
+  margin: 20px 0 -15px 0;
+  font-weight: bold;
+  color: rgba(255, 0, 0, 0.788);
+}
+
+.InvalidInput {
+  border-color: red;
+}
+
+.ListHead {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  position: relative;
+  width: calc(100vw - 70px);
+  height: 40px;
+  top: 10px;
+  margin-left: 60px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  background-color: #fc9815;
+}
+
+.ListHead .Title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  position: relative;
+  margin: auto 0 auto 15px;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: rgba(34, 34, 34, 0.794);
+}
+
+.ListHead .CopyWeek {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  overflow: hidden;
+  font-size: 1.2em;
+  font-weight: 600;
+  -webkit-text-decoration: normal;
+          text-decoration: normal;
+  text-overflow: ellipsis;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 12px;
+  border-color: black;
+  box-shadow: 3px 3px 3px rgba(68, 68, 68, 0.6);
+  -moz-box-shadow: 3px 3px 3px rgba(68, 68, 68, 0.6);
+  -webkit-box-shadow: 3px 3px 3px rgba(68, 68, 68, 0.6);
+  transition: all 100ms cubic-bezier(0.68, -0.75, 0.265, 1.75);
+  -webkit-transition: all 100ms cubic-bezier(0.68, -0.75, 0.265, 1.75);
+  color: #fc9815;
+  background-image: -webkit-gradient(linear, left bottom, left top, from(#404040), color-stop(#606060), to(#404040));
+  background-image: linear-gradient(to top, #404040, #606060, #404040);
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  margin: auto 15px auto 0;
+  padding: 2px 7px;
+  font-size: 1rem;
+  font-weight: normal;
+}
+
+.ListHead .CopyWeek:hover {
+  color: #fdc47a;
+}
+
+.ListHead .CopyWeek:active {
+  box-shadow: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  border-color: #a96102;
+  margin-top: 8px;
+}
+
+.ListHead .Save {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  overflow: hidden;
+  font-size: 1.2em;
+  font-weight: 600;
+  -webkit-text-decoration: normal;
+          text-decoration: normal;
+  text-overflow: ellipsis;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 12px;
+  border-color: black;
+  box-shadow: 3px 3px 3px rgba(68, 68, 68, 0.6);
+  -moz-box-shadow: 3px 3px 3px rgba(68, 68, 68, 0.6);
+  -webkit-box-shadow: 3px 3px 3px rgba(68, 68, 68, 0.6);
+  transition: all 100ms cubic-bezier(0.68, -0.75, 0.265, 1.75);
+  -webkit-transition: all 100ms cubic-bezier(0.68, -0.75, 0.265, 1.75);
+  color: #fc9815;
+  background-image: -webkit-gradient(linear, left bottom, left top, from(#404040), color-stop(#606060), to(#404040));
+  background-image: linear-gradient(to top, #404040, #606060, #404040);
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  margin: auto 15px auto 0;
+  padding: 2px 7px;
+  font-size: 1rem;
+  font-weight: normal;
+}
+
+.ListHead .Save:hover {
+  color: #fdc47a;
+}
+
+.ListHead .Save:active {
+  box-shadow: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  border-color: #a96102;
+  margin-top: 8px;
+}
+
+.ListHead .SelectWeek {
+  height: 25px;
+  margin: auto 15px auto 0;
+  font-size: 1rem;
+  color: #fc9815;
+  /* background: $calendar-weeks-button-bg; */
+  background-color: #404040;
+  /* image: url("data:image/svg+xml;utf8,<svg fill='orange' height='100%' viewBox='5 6 12 12' width='100%' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>"); */
+  background-position: calc(100% - 0.5em) 50%;
+  background-size: 15px;
+  background-repeat: no-repeat;
+}
+
+.ListHead .SelectWeek:hover {
+  border-color: #333333;
+  color: #fdc47a;
+}
+
+.ListHead .SelectWeek:focus {
+  border-color: gray;
+  color: #fdc47a;
+  -webkit-transition-duration: 150ms;
+          transition-duration: 150ms;
+}
+
+.ListBody {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: calc(100vw - 70px);
+  height: auto;
+  top: 10px;
+  margin-left: 60px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #fc9815;
+  border-collapse: collapse;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  background-color: #2d2d2d;
+}
+
+.ListBody .SettingName {
+  display: inline-block;
+  border: none;
+  width: 500px;
+}
+
+.ListBody .SettingName div {
+  width: 400px;
+  height: 22px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 5px;
+  border: 1px solid #764402;
+  border-collapse: collapse;
+  color: rgba(255, 255, 255, 0.801);
+}
+
+.ListBody .SettingProp {
+  display: inline-block;
+  width: 100%;
+}
+
+.ListBody .SettingProp div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 22px;
+  padding: 5px;
+  border: 1px solid #764402;
+  border-collapse: collapse;
+  color: #fc9815;
+}
+
+.ListBody .SettingProp div input[type='text'],
+.ListBody .SettingProp div input[type='number'] {
+  width: 100%;
+  border: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  text-align: left;
+  font-size: inherit;
+  color: inherit;
+  background: transparent;
+}
+
+.ListBody .SettingProp div input[type='text']:hover,
+.ListBody .SettingProp div input[type='number']:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.ListBody .SettingProp div .InputMob {
+  text-align: center !important;
+}
+
+.ListBody .SettingProp div input[type='button'] {
+  position: absolute;
+  margin-top: -2px;
+  font-size: 0.98rem;
+  padding: 2px 10px;
+}
+
+.ListBody .SettingProp div .ButtonMob {
+  position: relative !important;
+  height: 28px;
+  font-size: 1.1rem !important;
+  margin: -2px auto 0 auto !important;
+  padding: 0 20px;
+}
+
+.ListBody .SettingProp div input[type='checkbox'] + label {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  display: inline-block;
+  position: relative;
+  height: 25px;
+  width: 25px;
+  top: -2px;
+  margin-right: 0.5rem;
+  z-index: 100;
+  background-color: #303030;
+}
+
+.ListBody .SettingProp div input[type='checkbox'] + label:before {
+  content: 'X';
+  display: block;
+  position: absolute;
+  height: 25px;
+  width: 25px;
+  font-size: 22px;
+  cursor: pointer;
+  text-align: center;
+  line-height: 25px;
+  color: red;
+  background-color: #303030;
+  background-position: 0 -15px;
+}
+
+.ListBody .SettingProp div input[type='checkbox'] + label:after {
+  content: ' ';
+  font-size: 22px;
+  color: green;
+  background-color: #303030;
+}
+
+.ListBody .SettingProp div input[type='checkbox']:checked + label:before {
+  content: '✔';
+  height: 25px;
+  width: 25px;
+  margin: 0 0 0 0;
+  font-size: 22px;
+  text-align: center;
+  line-height: 25px;
+  color: green;
+  background-color: #303030;
+}
+
+.ListBody .SettingProp div input[type='checkbox']:checked + label:after {
+  content: ' ';
+  background-color: #303030;
+}
+
+.ListHeadMob {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  position: relative;
+  width: 100vw;
+  height: 40px;
+  top: 8px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  background-color: #fc9815;
+}
+
+.ListHeadMob .Title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  position: relative;
+  margin: auto 0 auto 15px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: rgba(34, 34, 34, 0.794);
+}
+
+.ListHeadMob .CopyWeek {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  overflow: hidden;
+  font-size: 1.2em;
+  font-weight: 600;
+  -webkit-text-decoration: normal;
+          text-decoration: normal;
+  text-overflow: ellipsis;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 12px;
+  border-color: black;
+  box-shadow: 3px 3px 3px rgba(68, 68, 68, 0.6);
+  -moz-box-shadow: 3px 3px 3px rgba(68, 68, 68, 0.6);
+  -webkit-box-shadow: 3px 3px 3px rgba(68, 68, 68, 0.6);
+  transition: all 100ms cubic-bezier(0.68, -0.75, 0.265, 1.75);
+  -webkit-transition: all 100ms cubic-bezier(0.68, -0.75, 0.265, 1.75);
+  color: #fc9815;
+  background-image: -webkit-gradient(linear, left bottom, left top, from(#404040), color-stop(#606060), to(#404040));
+  background-image: linear-gradient(to top, #404040, #606060, #404040);
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  margin: 0 15px 10px 0;
+  padding: 2px 7px;
+  font-size: 1rem;
+  font-weight: normal;
+}
+
+.ListHeadMob .CopyWeek:hover {
+  color: #fdc47a;
+}
+
+.ListHeadMob .CopyWeek:active {
+  box-shadow: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  border-color: #a96102;
+  margin-top: 8px;
+}
+
+.ListHeadMob .Save {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  overflow: hidden;
+  font-size: 1.2em;
+  font-weight: 600;
+  -webkit-text-decoration: normal;
+          text-decoration: normal;
+  text-overflow: ellipsis;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 12px;
+  border-color: black;
+  box-shadow: 3px 3px 3px rgba(68, 68, 68, 0.6);
+  -moz-box-shadow: 3px 3px 3px rgba(68, 68, 68, 0.6);
+  -webkit-box-shadow: 3px 3px 3px rgba(68, 68, 68, 0.6);
+  transition: all 100ms cubic-bezier(0.68, -0.75, 0.265, 1.75);
+  -webkit-transition: all 100ms cubic-bezier(0.68, -0.75, 0.265, 1.75);
+  color: #fc9815;
+  background-image: -webkit-gradient(linear, left bottom, left top, from(#404040), color-stop(#606060), to(#404040));
+  background-image: linear-gradient(to top, #404040, #606060, #404040);
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  margin: auto 15px auto 0;
+  padding: 2px 7px;
+  font-size: 1rem;
+  font-weight: normal;
+}
+
+.ListHeadMob .Save:hover {
+  color: #fdc47a;
+}
+
+.ListHeadMob .Save:active {
+  box-shadow: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  border-color: #a96102;
+  margin-top: 8px;
+}
+
+.ListHeadMob .SelectWeek {
+  height: 25px;
+  margin: auto 15px auto 0;
+  font-size: 1rem;
+  color: #fc9815;
+  /* background: $calendar-weeks-button-bg; */
+  background-color: #404040;
+  /* image: url("data:image/svg+xml;utf8,<svg fill='orange' height='100%' viewBox='5 6 12 12' width='100%' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>"); */
+  background-position: calc(100% - 0.5em) 50%;
+  background-size: 15px;
+  background-repeat: no-repeat;
+}
+
+.ListHeadMob .SelectWeek:hover {
+  border-color: #333333;
+  color: #fdc47a;
+}
+
+.ListHeadMob .SelectWeek:focus {
+  border-color: gray;
+  color: #fdc47a;
+  -webkit-transition-duration: 150ms;
+          transition-duration: 150ms;
+}
+
+.ListHeadMob .Icon {
+  display: inline-block;
+  position: relative;
+  padding: 1px 5px 0 10px;
+  color: #fecf93;
+}
+
+.ListBodyMob {
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
+  width: calc(100vw - 4px);
+  height: 75vh;
+  max-height: calc(100vh - 150px);
+  overflow-y: auto;
+  overflow-x: hidden;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #fc9815;
+  border-collapse: collapse;
+  background-color: #2d2d2d;
+}
+
+.ListBodyMob::-webkit-scrollbar-track {
+  border: none;
+  border-radius: 15px;
+  background-color: transparent;
+}
+
+.ListBodyMob::-webkit-scrollbar {
+  width: 5px;
+  background-color: transparent;
+}
+
+.ListBodyMob::-webkit-scrollbar-thumb {
+  border: 2px ridge rgba(252, 152, 21, 0.6);
+  border-radius: 5px;
+  background-color: rgba(228, 23, 23, 0.527);
+}
+
+.ListBodyMob .SettingName {
+  display: inline-block;
+  border: none;
+  width: 500px;
+}
+
+.ListBodyMob .SettingName div {
+  width: 400px;
+  height: 22px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 5px;
+  border: 1px solid #764402;
+  border-collapse: collapse;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.801);
+}
+
+.ListBodyMob .SettingProp {
+  display: inline-block;
+  width: 100%;
+}
+
+.ListBodyMob .SettingProp div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: auto;
+  padding: 2px;
+  border: 1px solid #764402;
+  border-collapse: collapse;
+  color: #fc9815;
+}
+
+.ListBodyMob .SettingProp div div {
+  width: 100%;
+  letter-spacing: 2px;
+  font-size: 0.5rem;
+  border: none;
+  color: azure;
+}
+
+.ListBodyMob .SettingProp div input[type='text'],
+.ListBodyMob .SettingProp div input[type='number'] {
+  width: 100%;
+  border: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  text-align: left;
+  font-size: 7vmin;
+  color: inherit;
+  background: transparent;
+}
+
+.ListBodyMob .SettingProp div input[type='text']:hover,
+.ListBodyMob .SettingProp div input[type='number']:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.ListBodyMob .SettingProp div .InputMob {
+  text-align: center !important;
+}
+
+.ListBodyMob .SettingProp div input[type='button'] {
+  position: absolute;
+  margin-top: -2px;
+  font-size: 0.98rem;
+  padding: 2px 10px;
+}
+
+.ListBodyMob .SettingProp div .ListButtonMob {
+  position: relative !important;
+  width: auto !important;
+  font-size: 1.2rem !important;
+  margin: 20px auto !important;
+  padding: 0 20px;
+}
+
+.ListBodyMob .SettingProp div .Deactivate {
+  font-size: 0.9rem !important;
+  margin-left: 4px !important;
+  margin-top: 15px !important;
+  margin-bottom: 4px !important;
+}
+
+.ListBodyMob .SettingProp div .AutorefreshMob {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  overflow: hidden;
+  font-size: 1.2rem;
+  font-weight: 600;
+  -webkit-text-decoration: normal;
+          text-decoration: normal;
+  text-overflow: ellipsis;
+  border-radius: 12px;
+  box-shadow: 3px 3px 3px rgba(68, 68, 68, 0.6);
+  -moz-box-shadow: 3px 3px 3px rgba(68, 68, 68, 0.6);
+  -webkit-box-shadow: 3px 3px 3px rgba(68, 68, 68, 0.6);
+  transition: all 402ms cubic-bezier(0.68, -0.75, 0.265, 1.75);
+  -webkit-transition: all 402ms cubic-bezier(0.68, -0.75, 0.265, 1.75);
+  color: #fc9815;
+  background-image: -webkit-gradient(linear, left bottom, left top, from(#404040), color-stop(#606060), to(#404040));
+  background-image: linear-gradient(to top, #404040, #606060, #404040);
+  position: relative !important;
+  width: auto !important;
+  font-size: 1.2rem !important;
+  margin: 20px auto !important;
+  padding: 5px 20px;
+  border-radius: 12px;
+}
+
+.ListBodyMob .SettingProp div .AutorefreshMob:active {
+  box-shadow: 1px rgba(0, 0, 0, 0.2) inset;
+  -moz-box-shadow: 1px rgba(0, 0, 0, 0.2) inset;
+  -webkit-box-shadow: 1px rgba(0, 0, 0, 0.2) inset;
+  background-image: -webkit-gradient(linear, left bottom, left top, from(#404040), color-stop(#505050), to(#404040));
+  background-image: linear-gradient(to top, #404040, #505050, #404040);
+}
+
+.ListBodyMob .SettingProp div .Active {
+  color: green;
+}
+
+.ListBodyMob .SettingProp div .Passive {
+  color: red;
+}
+
+.ListBodyMob .SettingProp div input[type='checkbox'] + label {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  display: inline-block;
+  position: relative;
+  height: 25px;
+  width: 25px;
+  top: -2px;
+  margin-right: 0.5rem;
+  z-index: 100;
+  background-color: #303030;
+}
+
+.ListBodyMob .SettingProp div input[type='checkbox'] + label:before {
+  content: 'X';
+  display: block;
+  position: absolute;
+  height: 25px;
+  width: 25px;
+  font-size: 22px;
+  cursor: pointer;
+  text-align: center;
+  line-height: 25px;
+  color: red;
+  background-color: #303030;
+  background-position: 0 -15px;
+}
+
+.ListBodyMob .SettingProp div input[type='checkbox'] + label:after {
+  content: ' ';
+  font-size: 22px;
+  color: green;
+  background-color: #303030;
+}
+
+.ListBodyMob .SettingProp div input[type='checkbox']:checked + label:before {
+  content: '✔';
+  height: 25px;
+  width: 25px;
+  margin: 0 0 0 0;
+  font-size: 22px;
+  text-align: center;
+  line-height: 25px;
+  color: green;
+  background-color: #303030;
+}
+
+.ListBodyMob .SettingProp div input[type='checkbox']:checked + label:after {
+  content: ' ';
+  background-color: #303030;
+}
+
+.SaveMob {
+  display: inline;
+  position: relative;
+  float: right;
+  top: 20px;
+  right: 5px;
+  cursor: pointer;
+  overflow: hidden;
+  font-size: 1.4rem;
+  font-weight: normal;
+  -webkit-text-decoration: normal;
+          text-decoration: normal;
+  text-overflow: ellipsis;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 12px;
+  border-color: black;
+  box-shadow: 6px 6px 1px rgba(22, 22, 22, 0.794);
+  -moz-box-shadow: 6px 6px 1px rgba(31, 30, 30, 0.6);
+  -webkit-box-shadow: 6px 6px 7px black;
+  -webkit-transition: all 1ms ease-in-out;
+  transition: all 1ms ease-in-out;
+  color: #fc9815;
+  background-image: -webkit-gradient(linear, left bottom, left top, from(#404040), color-stop(#606060), to(#404040));
+  background-image: linear-gradient(to top, #404040, #606060, #404040);
+  padding: 4px 7px;
+}
+
+.SaveMob:active {
+  margin-top: 2px;
+  right: 3px;
+  box-shadow: 2px 2px 1px black;
+  -moz-box-shadow: 2px 2px 1px black;
+  -webkit-box-shadow: 2px 2px 1px black;
+}
+
+.AddClientButtonMob, .AddClientButton {
+  display: block;
+  position: fixed;
+  left: 5px;
+  bottom: 5px;
+  padding: 10px 10px;
+  font-size: 7vmin;
+  -webkit-filter: drop-shadow(-1px -1px 2px rgba(99, 68, 2, 0.383));
+          filter: drop-shadow(-1px -1px 2px rgba(99, 68, 2, 0.383));
+  cursor: pointer;
+  border: 2px solid rgba(99, 68, 2, 0.644);
+  border-radius: 50%;
+  color: #fc9815;
+  background-color: rgba(99, 68, 2, 0.171);
+}
+
+.AddClientButton {
+  left: unset;
+  left: 1px;
+  font-size: 20px;
+  z-index: 400;
+  -webkit-transition: 300ms ease-in-out;
+  transition: 300ms ease-in-out;
+  color: #fc9815;
+  background-color: rgba(44, 44, 44, 0.623);
+}
+
+.AddClientButton:hover {
+  color: green;
+  background-color: rgba(44, 44, 44, 0.897);
+}
+
+.Confirmation {
+  position: fixed;
+  width: calc(100vw - 6px);
+  bottom: 0;
+  margin-bottom: -100vh;
+  opacity: 0;
+  z-index: 99999999 !important;
+  border: 3px dashed #fc9815;
+}
+
+.Confirmation p {
+  padding: 5px;
+  color: red;
+}
+
+.Confirmation input {
+  margin: 15px;
+}
+
+.Confirmation .Confirm {
+  float: left;
+}
+
+.Confirmation .Decline {
+  float: right;
+}
+
+.Response, .ResponseMob {
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  position: fixed;
+  width: auto;
+  min-width: 25vw;
+  top: 45vh;
+  margin-top: -100vh;
+  opacity: 0;
+  z-index: 999999;
+  border: 8px inset;
+  background: -webkit-gradient(linear, left bottom, left top, from(#404040), color-stop(#606060), to(#404040));
+  background: linear-gradient(to top, #404040, #606060, #404040);
+}
+
+.Response p, .ResponseMob p {
+  padding: 5px;
+  text-align: center;
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.801);
+}
+
+.Response input, .ResponseMob input {
+  margin: 15px;
+}
+
+.Response .Confirm, .ResponseMob .Confirm {
+  clear: both;
+  margin-left: calc(50% - 2.5rem);
+  width: 5rem;
+}
+
+.Response .Decline, .ResponseMob .Decline {
+  float: right;
+  color: red !important;
+}
+
+.ResponseMob {
+  height: auto !important;
+  width: 97%;
+  min-width: 95%;
+  top: unset;
+  bottom: -100vh;
+  word-wrap: break-word;
+  border: 5px inset;
+}
+
+.ResponseMob .Confirm {
+  width: 8rem;
+  margin-left: calc(50% - 4rem);
+  font-size: 1.5rem;
+}
+
+.ChoiceButton {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  overflow: hidden;
+  font-size: 1.2rem;
+  font-weight: 600;
+  -webkit-text-decoration: normal;
+          text-decoration: normal;
+  text-overflow: ellipsis;
+  border-radius: 12px;
+  box-shadow: 3px 3px 3px rgba(68, 68, 68, 0.6);
+  -moz-box-shadow: 3px 3px 3px rgba(68, 68, 68, 0.6);
+  -webkit-box-shadow: 3px 3px 3px rgba(68, 68, 68, 0.6);
+  transition: all 402ms cubic-bezier(0.68, -0.75, 0.265, 1.75);
+  -webkit-transition: all 402ms cubic-bezier(0.68, -0.75, 0.265, 1.75);
+  color: #fc9815;
+  background-image: -webkit-gradient(linear, left bottom, left top, from(#404040), color-stop(#606060), to(#404040));
+  background-image: linear-gradient(to top, #404040, #606060, #404040);
+  width: auto;
+  min-width: 5rem;
+  margin-top: 5px;
+}
+
+.ChoiceButton:active {
+  box-shadow: 1px rgba(0, 0, 0, 0.2) inset;
+  -moz-box-shadow: 1px rgba(0, 0, 0, 0.2) inset;
+  -webkit-box-shadow: 1px rgba(0, 0, 0, 0.2) inset;
+  background-image: -webkit-gradient(linear, left bottom, left top, from(#404040), color-stop(#505050), to(#404040));
+  background-image: linear-gradient(to top, #404040, #505050, #404040);
+}
+
+.ChoiceButton:hover {
+  background-image: -webkit-gradient(linear, left bottom, left top, from(#505050), color-stop(#303030), color-stop(#303030), to(#505050));
+  background-image: linear-gradient(to top, #505050, #303030, #303030, #505050);
+}
+
+.Confirm {
+  margin-right: 80px;
+  margin-top: 30px;
+}
+
+.Deny {
+  margin-top: 30px;
+  color: red !important;
+}
+
+.Add {
+  margin: auto;
+  margin-top: 30px;
+}
+
+.Save {
+  width: auto;
+  padding: 5px 10px;
+  margin: auto;
+  margin-top: 30px;
+}
+
+.CompanySetupMenu {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  padding-top: 20vh;
+  z-index: 999;
+  background-color: rgba(0, 0, 0, 0.952);
+}
+
+.SetupOptionsButton {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+  overflow: hidden;
+  font-size: 1.2rem;
+  font-weight: 600;
+  -webkit-text-decoration: normal;
+          text-decoration: normal;
+  text-overflow: ellipsis;
+  border-radius: 12px;
+  box-shadow: 3px 3px 3px rgba(68, 68, 68, 0.6);
+  -moz-box-shadow: 3px 3px 3px rgba(68, 68, 68, 0.6);
+  -webkit-box-shadow: 3px 3px 3px rgba(68, 68, 68, 0.6);
+  transition: all 402ms cubic-bezier(0.68, -0.75, 0.265, 1.75);
+  -webkit-transition: all 402ms cubic-bezier(0.68, -0.75, 0.265, 1.75);
+  color: #fc9815;
+  background-image: -webkit-gradient(linear, left bottom, left top, from(#404040), color-stop(#606060), to(#404040));
+  background-image: linear-gradient(to top, #404040, #606060, #404040);
+  display: block;
+  width: auto;
+  min-width: 200px;
+  margin: 20px auto;
+  padding: 5px;
+  font-size: 1.5rem !important;
+}
+
+.SetupOptionsButton:active {
+  box-shadow: 1px rgba(0, 0, 0, 0.2) inset;
+  -moz-box-shadow: 1px rgba(0, 0, 0, 0.2) inset;
+  -webkit-box-shadow: 1px rgba(0, 0, 0, 0.2) inset;
+  background-image: -webkit-gradient(linear, left bottom, left top, from(#404040), color-stop(#505050), to(#404040));
+  background-image: linear-gradient(to top, #404040, #505050, #404040);
+}
+
+.SetupOptionsButton:hover {
+  background-image: -webkit-gradient(linear, left bottom, left top, from(#505050), color-stop(#303030), color-stop(#303030), to(#505050));
+  background-image: linear-gradient(to top, #505050, #303030, #303030, #505050);
+}
+
+.addForSelectedWrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+  word-break: break-all;
+  width: 90%;
+  margin-left: 5%;
+}
+
+.addForSelected + label {
+  height: 20px !important;
+  width: 20px !important;
+  top: 3px;
+  margin-right: 0.5rem;
+  border: none;
+  cursor: pointer;
+  z-index: 1000;
+  outline: none;
+  -webkit-transition: all 0.15s ease-out 0s;
+  transition: all 0.15s ease-out 0s;
+  color: #fff;
+  background-color: #cbd1d8;
+}
+
+.addForSelected + label:before {
+  content: 'x';
+  display: block;
+  position: absolute;
+  height: 20px !important;
+  width: 20px !important;
+  font-size: 20px !important;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+  line-height: 20px !important;
+  color: red;
+  background-color: #d0cccb;
+  background-position: 0 -15px;
+}
+
+.addForSelected + label:after {
+  content: ' ';
+  background-color: #fffdfd;
+}
+
+.addForSelected:checked + label:before {
+  content: '✔';
+  display: inline-block;
+  position: absolute;
+  height: 20px !important;
+  width: 20px !important;
+  margin: 0 0 0 -20px !important;
+  font-size: 26.66667px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 20px !important;
+  color: green;
+  background-color: #fc9815;
+}
+
+.addForSelected:checked + label:after {
+  content: '';
+  display: block;
+  position: relative;
+  z-index: 100;
+  background-color: #40e0d0;
+}
+
+.ToolBoxMob {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999999;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.97);
+}
+
+.ToolBoxMob .Name {
+  display: block;
+  top: 0;
+  font-size: 1.5rem;
+  color: rgba(252, 152, 21, 0.8);
+}
+
+.ToolBoxMob .HorButtonWrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 80vw;
+  height: 40vw;
+}
+
+.ToolBoxMob .HorButtonWrapper .onEdit,
+.ToolBoxMob .HorButtonWrapper .onDelete {
+  width: 35vw !important;
+  height: 20vw !important;
+  font-size: 3rem;
+  background-color: #575757;
+}
+
+.ToolBoxMob .HorButtonWrapper .onEdit {
+  -webkit-box-shadow: #dbdf04 0 0 6px;
+          box-shadow: #dbdf04 0 0 6px;
+  color: #dbdf04;
+}
+
+.ToolBoxMob .HorButtonWrapper .onDelete {
+  -webkit-box-shadow: red 0 0 6px;
+          box-shadow: red 0 0 6px;
+  color: red;
+}
+
+.ListTable {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  max-height: 80vh;
+  overflow: hidden;
+}
+
+.ListTable .Thead {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 40px;
+  background-color: rgba(0, 0, 0, 0.65);
+}
+
+.ListTable .Thead .TheadRow {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 100%;
+  height: 40px;
+}
+
+.ListTable .Thead .TheadRow div {
+  display: block;
+  height: 40px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px 8px 10px 8px;
+  font-size: 1vw;
+  text-align: center;
+  border: 1px solid #764402;
+  color: rgba(255, 255, 255, 0.801);
+}
+
+.ListTable .Tbody {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  max-height: 80vh;
+  overflow-x: hidden;
+  overflow-y: overlay;
+}
+
+.ListTable .Tbody .TbodyRow {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 100%;
+  border: 1px solid #764402;
+}
+
+.ListTable .Tbody .TbodyRow div {
+  display: block;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px 8px 10px 8px;
+  height: auto;
+  font-size: 1vw;
+  text-align: center;
+  word-wrap: break-word;
+  border: none;
+  border-right: 1px solid #764402;
+  border-left: 1px solid #764402;
+  color: rgba(255, 255, 255, 0.801);
+}
+
+.ListTable .Tbody .TbodyRow:nth-child(odd) {
+  background-color: #505050;
+}
+
+.ListTable .Tbody .TbodyRow:nth-child(even) {
+  background-color: lighter(#505050);
+}
+
+.ListTableMob {
+  display: block;
+  width: 100%;
+  max-height: calc(100vh - 20px);
+  overflow: hidden;
+}
+
+.ListTableMob .Tbody {
+  display: block;
+  max-height: calc(100vh - 20px);
+  overflow-y: auto;
+}
+
+.ListTableMob .Tbody .TbodyRow {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 100%;
+}
+
+.ListTableMob .Tbody .TbodyRow .NumMob {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 5vw !important;
+}
+
+.ListTableMob .Tbody .TbodyRow .ListDataContainer {
+  display: inline-block;
+  width: 100% !important;
+  margin: 0;
+  padding: 0;
+}
+
+.ListTableMob .Tbody .TbodyRow .ListDataContainer div {
+  border: none;
+  padding: 2px 0;
+  width: 70vw !important;
+}
+
+.ListTableMob .Tbody .TbodyRow .ListOptions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  width: 5vw !important;
+}
+
+.ListTableMob .Tbody .TbodyRow div {
+  display: block;
+  padding: 10px 8px 10px 8px;
+  font-size: 4vw;
+  text-align: center;
+  word-wrap: break-word;
+  border: 1px solid #764402;
+  color: rgba(255, 255, 255, 0.801);
+}
+
+.ListTableMob .Tbody .TbodyRow:nth-child(odd) {
+  background-color: #505050;
+}
+
+.ListTableMob .Tbody .TbodyRow:nth-child(even) {
+  background-color: lighter(#505050);
+}
+
+.AddForm {
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  position: fixed;
+  margin-top: 250px;
+  z-index: 999;
+}
+
+.AddForm h3 {
+  margin: 10px 0 5px 0;
+  font-size: 1.4rem;
+  text-align: center;
+  color: white;
+}
+
+.AddForm input[type='password'],
+.AddForm [type='text'],
+.AddForm [type='number'] {
+  width: 400px;
+  max-width: 400px;
+  height: 33px;
+  font-size: 20px;
+  border-radius: 7px;
+}
+
+.AddForm input[type='password']:focus,
+.AddForm [type='text']:focus,
+.AddForm [type='number']:focus {
+  font-size: 21px;
+  border: 5px double black;
+}
+
+.AddForm .PhoneNumber {
+  width: 300px;
+  margin: 20px auto 5px auto;
+}
+
+.AddForm .PhoneNumberMob {
+  display: inline-block;
+  width: calc(97% - 80px);
+  max-width: 320px;
+  font-size: 1rem !important;
+}
+
+.AddForm .MobileOperator {
+  width: 98px;
+  height: 35px;
+  margin-left: 30px;
+  -webkit-transition: none;
+  transition: none;
+  border: px double rgba(128, 128, 128, 0.541);
+  /* &:hover {
+			background-image: url("data:image/svg+xml;utf8,<svg fill='orange' height='100%' viewBox='5 6 12 12' width='100%' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+		} */
+}
+
+.AddForm .MobileOperatorMob {
+  display: inline-block;
+  width: 80px;
+  height: 31px;
+  -webkit-transition: none;
+  transition: none;
+  margin: 20px auto 5px auto;
+  font-size: 1rem !important;
+  border: 2px double rgba(128, 128, 128, 0.541);
+  /* &:hover {
+			background-image: url("data:image/svg+xml;utf8,<svg fill='orange' height='100%' viewBox='5 6 12 12' width='100%' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+		} */
+}
+
+.WrappedToolsChkBoxContainer {
+  position: fixed;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  width: 1000vw;
+  height: 50vh;
+  padding: 10px;
+  z-index: 99;
+  overflow-y: auto;
+  background-color: #303030;
+}
+
+.WrappedToolsChkBoxContainer div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 30px;
+  margin: 5px 0;
+}
+
+.WrappedToolsChkBoxContainer div p {
+  color: rgba(255, 255, 255, 0.801);
+  font-size: 1.2em;
+}
+
+.ServiceSettingsContainer {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: absolute;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100vw !important;
+  height: 100vh;
+  min-height: 600px;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.897);
+  z-index: 999999;
+}
+
+.ServiceSettingsContainer h1 {
+  text-align: center;
+  margin-top: 0;
+  color: azure;
+}
+
+.ServiceSettingsContainer .ServiceSettingsPairContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.ServiceSettingsContainer .ServiceSettingsPairContainer div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.ServiceSettingsContainer .ServiceSettingsPairContainer div p {
+  font-size: 1.5rem;
+  color: #fc9815;
+}
+
+.ServiceSettingsContainer .SaveServiceSettings {
+  display: block;
+  margin: 15px auto 15px auto;
+  font-size: 1.5rem;
+  width: 200px;
+}
+
+.ServiceSettingsContainer .CloseServiceSettings {
+  width: 200px;
+  margin: 0 auto 0 auto;
+  font-size: 1.5rem;
+  color: red !important;
+}
+
+.SearchBarContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding-bottom: 5px;
+}
+
+.SearchBarContainer .SearchBar {
+  width: 50vw !important;
+  margin-bottom: 15px;
+}
+
+.SearchBarContainerMob {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding-bottom: 5px;
+}
+
+@media only screen and (orientation: landscape) {
+  /*  */
+}
+/*# sourceMappingURL=UI.module.css.map */

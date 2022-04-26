@@ -1,0 +1,1463 @@
+@import '../../scss/variables.scss';
+
+.ButtonWrapperMob {
+    @include flexBoxSpaceBetween;
+    box-sizing: border-box;
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+    height: 14vmin;
+    padding: 4px;
+    box-shadow: $base-orange-color 0 -3px 3px;
+    z-index: 99999999;
+    background-color: rgb(22, 22, 22);
+    .Btn_forward {
+        @include buttonMob;
+        display: block;
+        align-self: center;
+        width: 25vmin;
+        height: 9vmin;
+        font-size: 7vmin;
+        border-radius: 10px;
+        color: $base-orange-color;
+        &:active {
+            box-shadow: none;
+            -moz-box-shadow: none;
+            -webkit-box-shadow: none;
+            background-image: linear-gradient(
+                to top,
+                #404040,
+                #505050,
+                #404040
+            );
+        }
+    }
+    .Btn_Add {
+        @extend .Btn_forward;
+    }
+}
+
+.Backdrop {
+    display: block;
+    opacity: 0;
+    position: fixed;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    z-index: -100;
+    background-color: $backdrop-bg-color;
+}
+
+.Rounded {
+    @include RoundBottomBorders(20px);
+}
+
+.InputText {
+    display: block;
+    width: 97% !important;
+    margin: 20px auto 5px auto;
+    font-size: 18px !important;
+}
+
+.InputTextMob {
+    display: block;
+    width: 97% !important;
+    margin: 20px auto 5px auto;
+    font-size: 1rem !important;
+}
+
+.InformationsInput {
+    @extend .InputText;
+    @extend .input;
+    max-width: 400px !important;
+    height: 170px !important;
+    text-align: left;
+    border-radius: 7px;
+}
+
+.InformationsInputMob {
+    @extend .InformationsInput;
+    height: 35vmin !important;
+}
+
+.ReadOnly {
+    @extend .InputText;
+    @include readOnly;
+}
+
+.ReadOnlyMob {
+    @extend .InputTextMob;
+    @include readOnly;
+}
+
+.SelectInputText {
+    @extend .InputText;
+    max-width: 400px !important;
+    text-align-last: center;
+}
+
+.SelectInputTextMob {
+    @extend .SelectInputText;
+    max-width: 400px !important;
+    text-align-last: center;
+}
+
+.SelectServiceForEditMob {
+    @extend .SelectInputTextMob;
+    margin-bottom: 100px !important;
+    margin-top: -35px !important;
+}
+
+.InvalidInput {
+    border-color: red;
+}
+
+/* .Form {
+	position: fixed;
+	overflow: auto;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	z-index: 301;
+	table {
+		display: flex;
+		position: relative;
+		flex-direction: column;
+		justify-content: flex-start;
+		width: 95%;
+		height: auto;
+		max-height: calc(100vh - 260px);
+		margin: 10px auto 20px auto;
+		overflow: auto;
+		font-size: 22px;
+		border: 2px solid black;
+		thead {
+			display: block;
+			position: sticky;
+			top: 0;
+			margin: 0;
+			background-color: $header-background-color;
+			tr {
+				color: $base-orange-color;
+				th {
+					width: 45vw;
+					min-width: 300px;
+				}
+			}
+		}
+		tbody {
+			display: block;
+			margin: 0;
+			.Clients {
+				cursor: pointer;
+				color: white;
+				&:nth-child(odd) {
+					background-color: $header-background-color;
+				}
+				&:nth-child(even) {
+					background-color: $form-even-row-color;
+				}
+				td {
+					width: 45vw;
+					min-width: 300px;
+					border: 2px solid black;
+				}
+				&:hover {
+					color: black;
+					background-color: $base-orange-color;
+				}
+			}
+			.ClientsMob {
+				padding: 5px 0 4px 0;
+				cursor: pointer;
+				border-top: 6px ridge gray;
+				color: white;
+				&:nth-child(odd) {
+					background-image: $form-row-bg1;
+				}
+				&:nth-child(even) {
+					background-image: $form-row-bg2;
+				}
+				td {
+					width: 100vw;
+					min-width: 300px;
+				}
+			}
+			.Services {
+				cursor: pointer;
+				color: white;
+				&:nth-child(odd) {
+					background-color: $header-background-color;
+				}
+				&:nth-child(even) {
+					background-color: $form-even-row-color;
+				}
+
+				td {
+					width: 45vw;
+					min-width: 300px;
+					border: 2px solid black;
+				}
+			}
+			.ServicesMob {
+				padding: 5px 0 4px 0;
+				cursor: pointer;
+				border-top: 6px ridge gray;
+				color: white;
+				&:nth-child(odd) {
+					background-image: $form-row-bg1;
+				}
+				&:nth-child(even) {
+					background-image: $form-row-bg2;
+				}
+				td {
+					width: 80vw;
+					vertical-align: middle;
+					word-break: break-all;
+				}
+			}
+		}
+	}
+	input[type='password'],
+	[type='text'],
+	[type='number'] {
+		width: 400px;
+		max-width: 400px;
+		height: 33px;
+		font-size: 20px;
+		border-radius: 7px;
+		&:focus {
+			font-size: 21px;
+			border: 5px double black;
+		}
+	}
+	.MobileOperator {
+		transition: none;
+		border: px double rgba(128, 128, 128, 0.541);
+		&:hover {
+			background-image: url("data:image/svg+xml;utf8,<svg fill='orange' height='100%' viewBox='5 6 12 12' width='100%' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+		}
+	}
+	.InvalidInput {
+		border-color: red;
+	}
+	.PhoneNumber {
+		width: 320px;
+		margin: 20px auto 5px auto;
+	}
+	.MobileOperatorMob {
+		display: inline-block;
+		width: 80px;
+		height: 31px;
+		transition: none;
+		margin: 20px auto 5px auto;
+		font-size: 1rem !important;
+		border: 2px double rgba(128, 128, 128, 0.541);
+		&:hover {
+			background-image: url("data:image/svg+xml;utf8,<svg fill='orange' height='100%' viewBox='5 6 12 12' width='100%' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+		}
+	}
+	.PhoneNumberMob {
+		display: inline-block;
+		width: calc(97% - 80px);
+		max-width: 320px;
+		font-size: 1rem !important;
+	}
+	h3 {
+		margin: 10px 0 5px 0;
+		font-size: 1.4rem;
+		color: white;
+	}
+	h4 {
+		margin-bottom: 0;
+		color: rgba(black, 0.5);
+	}
+}
+
+.FormOverlay {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.582);
+}
+
+.FormOverlayMob {
+	@extend .FormOverlay;
+	position: fixed;
+	margin: -5px;
+	z-index: 99999998;
+}
+
+.FormTitle {
+	margin: 10px 0 10px 0;
+	font-size: 1.7rem;
+	color: $base-orange-color;
+	&:after {
+		content: '';
+		position: absolute;
+		top: 40px;
+		right: 0;
+		width: 100%;
+		height: 1px;
+		background-image: $orange-line-color;
+		-webkit-background-image: $orange-line-color;
+		-moz-background-image: $orange-line-color;
+		-o-background-image: $orange-line-color;
+		-ms-background-image: $orange-line-color;
+	}
+}
+
+.FormTitleMob {
+	margin: 5px 0 30px 0;
+	font-size: 6vmin;
+	color: $base-orange-color;
+} */
+
+.Filter {
+    display: block;
+    position: relative;
+    width: 80%;
+    margin: 8px auto 0 auto;
+    padding: 6px;
+    font-size: 16px;
+}
+
+.SubmitButton {
+    @include button;
+    display: inline-block;
+    width: 30%;
+    max-width: 300px;
+    height: 35px;
+    margin: 40px auto 5px auto;
+}
+
+.SubmitButtonMob {
+    @include button;
+    display: inline-block;
+    width: 70%;
+    max-width: 300px;
+    height: 40px;
+    margin: 20px auto 5px auto;
+}
+
+.FormButtonCloseMob {
+    display: block;
+    width: 50%;
+    height: 40px;
+    margin: 20px auto 5px auto;
+    color: orangered !important;
+}
+
+.FormButton {
+    display: inline-block;
+    width: 30%;
+    max-width: 300px;
+    height: 35px;
+    margin: 20px auto 5px auto;
+}
+
+.FormButtonClose {
+    display: inline-block;
+    width: 30%;
+    max-width: 300px;
+    height: 35px;
+    margin: 20px auto 5px auto;
+    color: orangered !important;
+}
+
+.FormButtonMob {
+    display: block;
+    width: 70%;
+    height: 40px;
+    margin: 20px auto 5px auto;
+    font-size: 5vmin !important;
+}
+
+.radioContainer {
+    display: inline-block;
+    position: absolute;
+    margin-top: 27.5vw;
+    border-radius: 50%;
+    border: none;
+    z-index: 300;
+}
+
+.radiolbl {
+    display: inline-block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.radiolbl input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    position: absolute;
+    border: none;
+    top: 0;
+    left: 0;
+    height: 26px;
+    width: 26px;
+    background: radial-gradient(
+        circle,
+        rgba(9, 14, 39, 0.664) 23%,
+        rgba(99, 101, 129, 0.938) 36%,
+        rgba(99, 101, 129, 0.486) 40%
+    );
+    border-radius: 50%;
+    border: none;
+}
+
+/* On mouse-over, add a grey background color */
+.radiolbl:hover input ~ .checkmark {
+    transform: scale(1.2, 1.2);
+    background: radial-gradient(
+        circle,
+        rgba(15, 28, 93, 0.76) 23%,
+        rgba(89, 92, 128, 0.979) 36%,
+        rgba(92, 94, 126, 0.781) 40%
+    );
+}
+
+/* When the radio button is checked, add a blue background */
+.radiolbl input:checked ~ .checkmark {
+    background: radial-gradient(
+        $base-orange-color 60%,
+        $base-orange-color 36%,
+        rgba($base-orange-color, 0.8) 40%
+    );
+    transition: ease-out 1.5s;
+    box-shadow: 0 0 3px 3px $base-orange-color;
+    transform: rotateY(360deg) scale(1.1, 1.1);
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+    content: '';
+    position: absolute;
+    display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.radiolbl input:checked ~ .checkmark:after {
+    display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.radiolbl .checkmark:after {
+    top: 8px;
+    left: 8px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgb(238, 255, 0);
+}
+
+.radio {
+    cursor: pointer;
+    margin: 0 10px 0 10px;
+    border-radius: 50%;
+    z-index: 9;
+    opacity: 1;
+}
+
+.DesciptionLabel {
+    margin: 20px 0 -15px 0;
+    font-weight: bold;
+    color: rgba(255, 0, 0, 0.788);
+}
+
+.InvalidInput {
+    border-color: red;
+}
+
+.ListHead {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    width: calc(100vw - 70px);
+    height: 40px;
+    top: 10px;
+    margin-left: 60px;
+    border: {
+        top-left-radius: 5px;
+        top-right-radius: 5px;
+    }
+    background-color: $base-orange-color;
+    .Title {
+        display: flex;
+        align-self: flex-start;
+        position: relative;
+        margin: auto 0 auto 15px;
+        font: {
+            size: 1.3rem;
+            weight: 600;
+        }
+        color: $list-title-color;
+    }
+    .CopyWeek {
+        @include iButton;
+        align-self: flex-end;
+        margin: auto 15px auto 0;
+        padding: 2px 7px;
+        font: {
+            size: 1rem;
+            weight: normal;
+        }
+    }
+
+    .Save {
+        @include iButton;
+        align-self: flex-end;
+        margin: auto 15px auto 0;
+        padding: 2px 7px;
+        font: {
+            size: 1rem;
+            weight: normal;
+        }
+    }
+    .SelectWeek {
+        height: 25px;
+        margin: auto 15px auto 0;
+        font-size: 1rem;
+        color: $base-orange-color;
+        /* background: $calendar-weeks-button-bg; */
+        background: {
+            color: #404040;
+            /* image: url("data:image/svg+xml;utf8,<svg fill='orange' height='100%' viewBox='5 6 12 12' width='100%' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>"); */
+            position: calc(100% - 0.5em) 50%;
+            size: 15px;
+            repeat: no-repeat;
+        }
+        &:hover {
+            border-color: lighten($calendar-time_day-color, 20%);
+            color: lighten($base-orange-color, 20%);
+        }
+        &:focus {
+            border-color: lighten($calendar-time_day-color, 50%);
+            color: lighten($base-orange-color, 20%);
+            transition-duration: 150ms;
+        }
+    }
+}
+.ListBody {
+    display: flex;
+    position: relative;
+    box-sizing: border-box;
+    width: calc(100vw - 70px);
+    height: auto;
+    top: 10px;
+    margin-left: 60px;
+    border: {
+        style: solid;
+        width: 2px;
+        color: $base-orange-color;
+        collapse: collapse;
+        bottom-left-radius: 5px;
+        bottom-right-radius: 5px;
+    }
+    background-color: darken($alt-background-color, 1%);
+    .SettingName {
+        display: inline-block;
+        border: none;
+        width: 500px;
+        div {
+            width: 400px;
+            height: 22px;
+            display: flex;
+            padding: 5px;
+            border: 1px solid darken($base-orange-color, 30%);
+            border-collapse: collapse;
+            color: $list-name-color;
+        }
+    }
+    .SettingProp {
+        display: inline-block;
+        width: 100%;
+        div {
+            display: flex;
+            height: 22px;
+            padding: 5px;
+            border: 1px solid darken($base-orange-color, 30%);
+            border-collapse: collapse;
+            color: $list-prop-color;
+            input[type='text'],
+            input[type='number'] {
+                width: 100%;
+                border: none;
+                box-shadow: none;
+                text-align: left;
+                font-size: inherit;
+                color: inherit;
+                background: transparent;
+                &:hover {
+                    background: rgba(white, 0.2);
+                }
+            }
+            .InputMob {
+                text-align: center !important;
+            }
+            input[type='button'] {
+                position: absolute;
+                margin-top: -2px;
+                font-size: 0.98rem;
+                padding: 2px 10px;
+            }
+            .ButtonMob {
+                position: relative !important;
+                height: 28px;
+                font-size: 1.1rem !important;
+                margin: -2px auto 0 auto !important;
+                padding: 0 20px;
+            }
+            input[type='checkbox'] + label {
+                @include noAppearance;
+                display: inline-block;
+                position: relative;
+                height: 25px;
+                width: 25px;
+                top: -2px;
+                margin-right: 0.5rem;
+                z-index: 100;
+                background-color: $alt-background-color;
+                &:before {
+                    content: 'X';
+                    display: block;
+                    position: absolute;
+                    height: 25px;
+                    width: 25px;
+                    font-size: 22px;
+                    cursor: pointer;
+                    text-align: center;
+                    line-height: 25px;
+                    color: red;
+                    background: {
+                        color: $alt-background-color;
+                        position: 0 -15px;
+                    }
+                }
+                &:after {
+                    content: ' ';
+                    font-size: 22px;
+                    color: green;
+                    background-color: $alt-background-color;
+                }
+            }
+            input[type='checkbox']:checked + label {
+                &:before {
+                    content: '✔';
+                    height: 25px;
+                    width: 25px;
+                    margin: 0 0 0 0;
+                    font-size: 22px;
+                    text-align: center;
+                    line-height: 25px;
+                    color: green;
+                    background-color: $alt-background-color;
+                }
+                &:after {
+                    content: ' ';
+                    background-color: $alt-background-color;
+                }
+            }
+        }
+    }
+}
+
+.ListHeadMob {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    width: 100vw;
+    height: 40px;
+    top: 8px;
+    border: {
+        top-left-radius: 20px;
+        top-right-radius: 20px;
+    }
+    background-color: $base-orange-color;
+    .Title {
+        display: flex;
+        align-self: flex-start;
+        position: relative;
+        margin: auto 0 auto 15px;
+        font: {
+            size: 1rem;
+            weight: 600;
+        }
+        color: $list-title-color;
+    }
+    .CopyWeek {
+        @include iButton;
+        align-self: flex-end;
+        margin: 0 15px 10px 0;
+        padding: 2px 7px;
+        font: {
+            size: 1rem;
+            weight: normal;
+        }
+    }
+    .Save {
+        @include iButton;
+        align-self: flex-end;
+        margin: auto 15px auto 0;
+        padding: 2px 7px;
+        font: {
+            size: 1rem;
+            weight: normal;
+        }
+    }
+    .SelectWeek {
+        height: 25px;
+        margin: auto 15px auto 0;
+        font-size: 1rem;
+        color: $base-orange-color;
+        /* background: $calendar-weeks-button-bg; */
+        background: {
+            color: #404040;
+            /* image: url("data:image/svg+xml;utf8,<svg fill='orange' height='100%' viewBox='5 6 12 12' width='100%' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>"); */
+            position: calc(100% - 0.5em) 50%;
+            size: 15px;
+            repeat: no-repeat;
+        }
+        &:hover {
+            border-color: lighten($calendar-time_day-color, 20%);
+            color: lighten($base-orange-color, 20%);
+        }
+        &:focus {
+            border-color: lighten($calendar-time_day-color, 50%);
+            color: lighten($base-orange-color, 20%);
+            transition-duration: 150ms;
+        }
+    }
+    .Icon {
+        display: inline-block;
+        position: relative;
+        padding: 1px 5px 0 10px;
+        color: lighten($base-orange-color, 25%);
+    }
+}
+
+.ListBodyMob {
+    @include RoundBottomBorders(20px);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: calc(100vw - 4px);
+    height: 75vh;
+    max-height: calc(100vh - 150px);
+    overflow-y: auto;
+    overflow-x: hidden;
+    border: {
+        style: solid;
+        width: 2px;
+        color: $base-orange-color;
+        collapse: collapse;
+    }
+    background-color: darken($alt-background-color, 1%);
+    &::-webkit-scrollbar-track {
+        border: none;
+        border-radius: 15px;
+        // border color does not support transparent on scrollbar
+        // border-color: transparent;
+        background-color: transparent;
+    }
+
+    &::-webkit-scrollbar {
+        width: 5px;
+        background-color: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        border: 2px ridge rgba($base-orange-color, 0.6) {
+            radius: 5px;
+        }
+        background-color: rgba(228, 23, 23, 0.527);
+    }
+    .SettingName {
+        display: inline-block;
+        border: none;
+        width: 500px;
+        div {
+            width: 400px;
+            height: 22px;
+            display: flex;
+            padding: 5px;
+            border: 1px solid darken($base-orange-color, 30%);
+            border-collapse: collapse;
+            font-size: 0.8rem;
+            color: $list-name-color;
+        }
+    }
+    .SettingProp {
+        display: inline-block;
+        width: 100%;
+        div {
+            display: flex;
+            flex-direction: column;
+            height: auto;
+            padding: 2px;
+            border: 1px solid darken($base-orange-color, 30%);
+            border-collapse: collapse;
+            color: $list-prop-color;
+            div {
+                width: 100%;
+                letter-spacing: 2px;
+                font-size: 0.5rem;
+                border: none;
+                color: azure;
+            }
+            input[type='text'],
+            input[type='number'] {
+                width: 100%;
+                border: none;
+                box-shadow: none;
+                text-align: left;
+                font-size: 7vmin;
+                color: inherit;
+                background: transparent;
+                &:hover {
+                    background: rgba(white, 0.2);
+                }
+            }
+            .InputMob {
+                text-align: center !important;
+            }
+            input[type='button'] {
+                position: absolute;
+                margin-top: -2px;
+                font-size: 0.98rem;
+                padding: 2px 10px;
+            }
+            .ListButtonMob {
+                position: relative !important;
+                width: auto !important;
+                font-size: 1.2rem !important;
+                margin: 20px auto !important;
+                padding: 0 20px;
+            }
+            .Deactivate {
+                font-size: 0.9rem !important;
+                margin: {
+                    left: 4px !important;
+                    top: 15px !important;
+                    bottom: 4px !important;
+                }
+            }
+            .AutorefreshMob {
+                @include buttonMob;
+                position: relative !important;
+                width: auto !important;
+                font-size: 1.2rem !important;
+                margin: 20px auto !important;
+                padding: 5px 20px;
+                border-radius: 12px;
+            }
+            .Active {
+                color: green;
+            }
+            .Passive {
+                color: red;
+            }
+            input[type='checkbox'] + label {
+                @include noAppearance;
+                display: inline-block;
+                position: relative;
+                height: 25px;
+                width: 25px;
+                top: -2px;
+                margin-right: 0.5rem;
+                z-index: 100;
+                background-color: $alt-background-color;
+                &:before {
+                    content: 'X';
+                    display: block;
+                    position: absolute;
+                    height: 25px;
+                    width: 25px;
+                    font-size: 22px;
+                    cursor: pointer;
+                    text-align: center;
+                    line-height: 25px;
+                    color: red;
+                    background: {
+                        color: $alt-background-color;
+                        position: 0 -15px;
+                    }
+                }
+                &:after {
+                    content: ' ';
+                    font-size: 22px;
+                    color: green;
+                    background-color: $alt-background-color;
+                }
+            }
+            input[type='checkbox']:checked + label {
+                &:before {
+                    content: '✔';
+                    height: 25px;
+                    width: 25px;
+                    margin: 0 0 0 0;
+                    font-size: 22px;
+                    text-align: center;
+                    line-height: 25px;
+                    color: green;
+                    background-color: $alt-background-color;
+                }
+                &:after {
+                    content: ' ';
+                    background-color: $alt-background-color;
+                }
+            }
+        }
+    }
+}
+
+.SaveMob {
+    @include iButtonMob;
+}
+
+.AddClientButtonMob {
+    display: block;
+    position: fixed;
+    left: 5px;
+    bottom: 5px;
+    padding: 10px 10px;
+    font-size: 7vmin;
+    filter: drop-shadow(-1px -1px 2px rgba(99, 68, 2, 0.383));
+    cursor: pointer;
+    border: 2px solid rgba(99, 68, 2, 0.644);
+    border-radius: 50%;
+    color: $base-orange-color;
+    background-color: rgba(99, 68, 2, 0.171);
+}
+
+.AddClientButton {
+    @extend .AddClientButtonMob;
+    left: unset;
+    left: 1px;
+    font-size: 20px;
+    z-index: 400;
+    transition: 300ms ease-in-out;
+    color: $base-orange-color;
+    background-color: rgba(44, 44, 44, 0.623);
+    &:hover {
+        color: green;
+        background-color: rgba(44, 44, 44, 0.897);
+    }
+}
+
+.Confirmation {
+    position: fixed;
+    width: calc(100vw - 6px);
+    bottom: 0;
+    margin-bottom: -100vh;
+    opacity: 0;
+    z-index: 9999;
+    border: 3px dashed $base-orange-color;
+    p {
+        padding: 5px;
+        color: red;
+    }
+    input {
+        margin: 15px;
+    }
+    .Confirm {
+        float: left;
+    }
+    .Decline {
+        float: right;
+    }
+}
+
+.Response {
+    @include absoluteCenter;
+    position: fixed;
+    width: auto;
+    min-width: 25vw;
+    top: 45vh;
+    margin-top: -100vh;
+    opacity: 0;
+    z-index: 999999;
+    border: 8px inset;
+    background: $calendar-weeks-button-bg;
+    p {
+        padding: 5px;
+        text-align: center;
+        font-size: 1.2rem;
+        color: $base-cal-font-color;
+    }
+    input {
+        margin: 15px;
+    }
+    .Confirm {
+        clear: both;
+        margin-left: calc(50% - 2.5rem);
+        width: 5rem;
+    }
+    .Decline {
+        float: right;
+        color: red !important;
+    }
+}
+
+.ResponseMob {
+    @extend .Response;
+    height: auto !important;
+    width: 97%;
+    min-width: 95%;
+    top: unset;
+    bottom: -100vh;
+    word-wrap: break-word;
+    border: 5px inset;
+    .Confirm {
+        width: 8rem;
+        margin-left: calc(50% - 4rem);
+        font-size: 1.5rem;
+    }
+}
+
+.ChoiceButton {
+    @include button;
+    width: auto;
+    min-width: 5rem;
+    margin-top: 5px;
+}
+
+.Confirm {
+    margin-right: 80px;
+    margin-top: 30px;
+}
+
+.Deny {
+    margin-top: 30px;
+    color: red !important;
+}
+
+.Add {
+    margin: auto;
+    margin-top: 30px;
+}
+
+.Save {
+    width: auto;
+    padding: 5px 10px;
+    margin: auto;
+    margin-top: 30px;
+}
+
+.CompanySetupMenu {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    padding-top: 20vh;
+    z-index: 999;
+    background-color: rgba(0, 0, 0, 0.952);
+}
+
+.SetupOptionsButton {
+    @include button;
+    display: block;
+    width: auto;
+    min-width: 200px;
+    margin: 20px auto;
+    padding: 5px;
+    font-size: 1.5rem !important;
+}
+
+.addForSelectedWrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    word-break: break-all;
+    width: 90%;
+    margin-left: 5%;
+}
+
+.addForSelected + label {
+    height: 20px !important;
+    width: 20px !important;
+    top: 3px;
+    margin-right: 0.5rem;
+    border: none;
+    cursor: pointer;
+    z-index: 1000;
+    outline: none;
+    transition: all 0.15s ease-out 0s;
+    color: #fff;
+    background-color: #cbd1d8;
+    &:before {
+        content: 'x';
+        display: block;
+        position: absolute;
+        height: 20px !important;
+        width: 20px !important;
+        font: {
+            size: 20px !important;
+            weight: bold;
+        }
+        cursor: pointer;
+        text-align: center;
+        line-height: 20px !important;
+        color: red;
+        background: {
+            color: #d0cccb;
+            position: 0 -15px;
+        }
+    }
+    &:after {
+        content: ' ';
+        background: {
+            color: #fffdfd;
+        }
+    }
+}
+
+.addForSelected:checked + label {
+    &:before {
+        content: '✔';
+        display: inline-block;
+        position: absolute;
+        height: 20px !important;
+        width: 20px !important;
+        margin: 0 0 0 -20px !important;
+        font: {
+            size: 26.66667px;
+            weight: bold;
+        }
+        text-align: center;
+        line-height: 20px !important;
+        color: green;
+        background-color: $base-orange-color;
+    }
+    &:after {
+        content: '';
+        display: block;
+        position: relative;
+        z-index: 100;
+        background-color: #40e0d0;
+    }
+}
+
+.ToolBoxMob {
+    @include flexBoxCenter;
+    flex-direction: column;
+    justify-content: space-evenly;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    z-index: 9999999;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.97);
+    .Name {
+        display: block;
+        top: 0;
+        font-size: 1.5rem;
+        color: rgba($base-orange-color, 0.8);
+    }
+    .HorButtonWrapper {
+        @include flexBoxCenter;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 80vw;
+        height: 40vw;
+        .onEdit,
+        .onDelete {
+            width: 35vw !important;
+            height: 20vw !important;
+            font-size: 3rem;
+            background-color: rgb(87, 87, 87);
+        }
+        .onEdit {
+            box-shadow: rgb(219, 223, 4) 0 0 6px;
+            color: rgb(219, 223, 4);
+        }
+        .onDelete {
+            box-shadow: red 0 0 6px;
+            color: red;
+        }
+    }
+}
+
+.ListTable {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-height: 80vh;
+    overflow: hidden;
+    .Thead {
+        display: flex;
+        height: 40px;
+        background-color: rgba(black, 0.65);
+        .TheadRow {
+            display: flex;
+            box-sizing: border-box;
+            flex-direction: row;
+            width: 100%;
+            height: 40px;
+            div {
+                display: block;
+                height: 40px;
+                box-sizing: border-box;
+                padding: 10px 8px 10px 8px;
+                font-size: 1vw;
+                text-align: center;
+                border: 1px solid #764402;
+                color: $base-cal-font-color;
+            }
+        }
+    }
+    .Tbody {
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+        max-height: 80vh;
+        overflow-x: hidden;
+        overflow-y: overlay;
+        .TbodyRow {
+            @include flexBoxCenter;
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            border: 1px solid #764402;
+            div {
+                display: block;
+                box-sizing: border-box;
+                padding: 10px 8px 10px 8px;
+                height: auto;
+                font-size: 1vw;
+                text-align: center;
+                word-wrap: break-word;
+                border: none;
+                border-right: 1px solid #764402;
+                border-left: 1px solid #764402;
+                color: $list-name-color;
+            }
+        }
+        .TbodyRow:nth-child(odd) {
+            background-color: $form-even-row-color;
+        }
+        .TbodyRow:nth-child(even) {
+            background-color: lighter($form-even-row-color);
+        }
+    }
+}
+
+.ListTableMob {
+    display: block;
+    width: 100%;
+    max-height: calc(100vh - 20px);
+    overflow: hidden;
+    .Tbody {
+        display: block;
+        max-height: calc(100vh - 20px);
+        overflow-y: auto;
+        .TbodyRow {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            .NumMob {
+                @include flexBoxCenter;
+                width: 5vw !important;
+            }
+            .ListDataContainer {
+                display: inline-block;
+                width: 100% !important;
+                margin: 0;
+                padding: 0;
+                div {
+                    border: none;
+                    padding: 2px 0;
+                    width: 70vw !important;
+                }
+            }
+            .ListOptions {
+                @include flexBoxCenter;
+                width: 100%;
+                width: 5vw !important;
+            }
+            div {
+                display: block;
+                padding: 10px 8px 10px 8px;
+                font-size: 4vw;
+                text-align: center;
+                word-wrap: break-word;
+                border: 1px solid #764402;
+                color: $list-name-color;
+            }
+        }
+        .TbodyRow:nth-child(odd) {
+            background-color: $form-even-row-color;
+        }
+        .TbodyRow:nth-child(even) {
+            background-color: lighter($form-even-row-color);
+        }
+    }
+}
+
+.AddFormContainer {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 998;
+    background-color: $backdrop-bg-color;
+}
+
+.AddForm {
+    @include absoluteCenter;
+    position: absolute;
+    margin-top: 250px;
+    z-index: 999;
+    h3 {
+        margin: 10px 0 5px 0;
+        font-size: 1.4rem;
+        text-align: center;
+        color: white;
+    }
+    input[type='password'],
+    [type='text'],
+    [type='number'] {
+        width: 400px;
+        max-width: 400px;
+        height: 33px;
+        font-size: 20px;
+        border-radius: 7px;
+        &:focus {
+            font-size: 21px;
+            border: 5px double black;
+        }
+    }
+    .PhoneNumber {
+        width: 300px;
+        margin: 20px auto 5px auto;
+    }
+    .PhoneNumberMob {
+        display: inline-block;
+        width: calc(97% - 80px);
+        max-width: 320px;
+        font-size: 1rem !important;
+    }
+    .MobileOperator {
+        width: 98px;
+        height: 35px;
+        margin-left: 30px;
+        transition: none;
+        border: px double rgba(128, 128, 128, 0.541);
+        /* &:hover {
+			background-image: url("data:image/svg+xml;utf8,<svg fill='orange' height='100%' viewBox='5 6 12 12' width='100%' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+		} */
+    }
+    .MobileOperatorMob {
+        display: inline-block;
+        width: 80px;
+        height: 31px;
+        transition: none;
+        margin: 20px auto 5px auto;
+        font-size: 1rem !important;
+        border: 2px double rgba(128, 128, 128, 0.541);
+        /* &:hover {
+			background-image: url("data:image/svg+xml;utf8,<svg fill='orange' height='100%' viewBox='5 6 12 12' width='100%' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+		} */
+    }
+}
+
+.WrappedToolsChkBoxContainer {
+    position: fixed;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 1000vw;
+    height: 50vh;
+    padding: 10px;
+    z-index: 99;
+    overflow-y: auto;
+    background-color: $base-background-color;
+    div {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        height: 30px;
+        margin: 5px 0;
+        p {
+            color: $base-cal-font-color;
+            font-size: 1.2em;
+        }
+    }
+}
+
+.ServiceSettingsContainer {
+    flex-direction: column;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    width: 100vw !important;
+    height: 100vh;
+    min-height: 600px;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.897);
+    z-index: 999999;
+    h1 {
+        text-align: center;
+        margin-top: 0;
+        color: azure;
+    }
+    .ServiceSettingsPairContainer {
+        display: flex;
+        flex-direction: column;
+        div {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            p {
+                font-size: 1.5rem;
+                color: $base-orange-color;
+            }
+        }
+    }
+    .SaveServiceSettings {
+        display: block;
+        margin: 15px auto 15px auto;
+        font-size: 1.5rem;
+        width: 200px;
+    }
+    .CloseServiceSettings {
+        width: 200px;
+        margin: 0 auto 0 auto;
+        font-size: 1.5rem;
+        color: red !important;
+    }
+}
+
+.SearchBarContainer {
+    @include flexBoxCenter;
+    flex-direction: column;
+    padding-bottom: 5px;
+    .SearchBar {
+        width: 50vw !important;
+        margin-bottom: 15px;
+    }
+}
+
+.SearchBarContainerMob {
+    @include flexBoxCenter;
+    flex-direction: column;
+    padding-bottom: 5px;
+}
+
+@media only screen and (orientation: landscape) {
+    /*  */
+}
