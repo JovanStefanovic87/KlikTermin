@@ -1,0 +1,29 @@
+@import '../../scss/variables.scss';
+
+.InviteClientMob {
+	position: fixed;
+	width: calc(100vw - 5px);
+	margin-left: 100%;
+	text-align: center;
+	opacity: 0;
+	z-index: 500;
+	border: 2px dashed $base-orange-color;
+	background-color: black;
+	/* p {
+		font-size: 5vmin;
+		color: rgb(4, 212, 4);
+	}
+	input {
+		font-size: 7vmin;
+		margin: 15px auto;
+		padding: 10px 15px;
+	}
+	.Icon {
+		padding: 10px 7vw;
+		border: 1px ridge rgba(21, 121, 21, 0.507);
+		border-radius: 20px;
+	}
+	.line {
+		margin-top: 35px;
+	} */
+}

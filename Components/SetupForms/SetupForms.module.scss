@@ -1,0 +1,721 @@
+@import '../UI/UI.module.scss';
+
+.FormBlackBg {
+	position: fixed;
+	overflow: auto;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	z-index: 999;
+}
+
+.GuideForm {
+	position: relative;
+	margin: 25px auto;
+	background-color: transparent;
+}
+
+.GuideFormMob {
+	@extend .GuideForm;
+	width: 100vw;
+	overflow-x: hidden;
+	margin: 0;
+}
+
+.Forward {
+	@include button;
+	display: inline-block;
+	position: relative;
+	width: auto;
+	align-self: flex-end;
+	margin: 10px 5px 10px 350px;
+	padding: 4px 8px;
+}
+
+.ForwardMob {
+	@extend .Forward;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	margin: 0 10px 7vh 0;
+	font-size: 1.7rem !important;
+	@media screen and (orientation: landscape) {
+		position: relative;
+		float: right;
+		margin: 28px 10px 30px 0;
+	}
+}
+
+.Review {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-content: center;
+	width: 100%;
+	max-width: 800px;
+	margin: 20px auto;
+	padding: 5px 0;
+	background-color: rgba($base-orange-color, 0.07);
+	cursor: default;
+	h4 {
+		margin: 3px 0;
+		text-decoration: underline;
+		font-size: 1.3em;
+		color: $base-cal-font-color;
+	}
+	div {
+		margin: 5px 0;
+		color: $base-cal-font-color;
+	}
+}
+
+/* .ReviewMob {
+	@extend .Review;
+	width: 95vw;
+	max-height: 150px;
+	overflow-y: auto;
+	margin: 45px auto;
+} */
+
+.ReviewMob {
+	@extend .Review;
+	width: 95vw;
+	overflow-y: auto;
+	margin: 45px auto;
+	padding: 0;
+	&::-webkit-scrollbar-track {
+		border: none;
+		border-radius: 15px;
+		// border color does not support transparent on scrollbar
+		// border-color: transparent;
+		background-color: transparent;
+	}
+
+	&::-webkit-scrollbar {
+		width: 5px;
+		background-color: transparent;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		border: 2px ridge rgba($base-orange-color, 0.6) {
+			radius: 5px;
+		}
+		background-color: rgba(228, 23, 23, 0.527);
+	}
+	p {
+		margin: 0;
+		margin-top: 10px;
+		color: rgba($base-orange-color, 0.8);
+	}
+}
+
+.EmptyListMessage {
+	margin: 7px 0;
+	color: $base-orange-color;
+}
+
+.SetupGuideListContainer {
+	display: block;
+	width: 100% !important;
+	margin: auto;
+	border: 1px solid black;
+	border-collapse: collapse;
+	tbody {
+		display: flex;
+		flex-direction: column;
+		align-content: center;
+		justify-content: center;
+		width: 100% !important;
+		tr {
+			display: flex;
+			flex-direction: row;
+			width: 100% !important;
+			color: $base-orange-color;
+			th {
+				flex: 1 !important;
+				font-size: 0.9em;
+				border: 1.9px ridge black;
+				background-color: $form-even-row-color;
+			}
+		}
+		tr {
+			td {
+				width: 100% !important;
+				padding: 5px 1px;
+				font-size: 0.85em;
+				overflow: hidden;
+				word-wrap: break-word;
+				border: 1px solid rgba(0, 0, 0, 0.527);
+				color: $header-background-color;
+				background-color: $base-list-bg-color;
+			}
+			.tdLeftAlign {
+				text-align: left;
+				padding-left: 5px;
+			}
+		}
+	}
+}
+
+.SetupGuideListContainerMob {
+	display: block;
+	width: 100% !important;
+	margin: auto;
+	border: 1px solid black;
+	border-collapse: collapse;
+	tbody {
+		display: flex;
+		flex-direction: column;
+		align-content: center;
+		justify-content: center;
+		width: 100% !important;
+		tr {
+			display: flex;
+			flex-direction: row;
+			width: 100% !important;
+			color: $base-orange-color;
+			th {
+				width: 100% !important;
+				font-size: 0.9em;
+				border: 1.9px ridge black;
+				background-color: $form-even-row-color;
+			}
+		}
+		tr {
+			td {
+				width: 100% !important;
+				padding: 5px 1px;
+				font-size: 0.85em;
+				overflow: hidden;
+				word-wrap: break-word;
+				border: 1px solid rgba(0, 0, 0, 0.527);
+				color: $header-background-color;
+				background-color: $base-list-bg-color;
+			}
+			.tdLeftAlign {
+				text-align: left;
+				padding-left: 5px;
+			}
+		}
+	}
+}
+
+.IconTd {
+	width: 70px !important;
+	min-width: 70px !important;
+	max-width: 70px !important;
+	cursor: pointer;
+}
+
+.ToolBoxButton {
+	@extend .IconTd;
+	color: $base-orange-color !important;
+	background: $calendar-weeks-button-bg !important;
+}
+
+.IconTdEmployeesPicker {
+	width: 72px !important;
+	min-width: 72px !important;
+	max-width: 72px !important;
+	cursor: pointer;
+}
+
+.IconTdHead {
+	width: 70px !important;
+	min-width: 70px !important;
+	max-width: 70px !important;
+	padding: 0 1.5px;
+}
+
+.SetupGuidIcon {
+	width: 70px !important;
+	min-width: 70px !important;
+	max-width: 70px !important;
+}
+
+.CheckBoxTdHead {
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	flex-direction: row;
+	width: 30px !important;
+	min-width: 30px !important;
+	max-width: 30px !important;
+	input + label {
+		justify-self: center;
+		align-self: center;
+		margin: -7px 0 0 0 !important;
+	}
+}
+
+/* .SetupGuideListHeadContainer,
+.SetupGuideListBodyContainer {
+	@include flexBoxSelf;
+	width: 90%;
+} */
+
+.SetupGuideListHeadContainer {
+	display: block;
+	background-color: red;
+}
+
+.SetupGuideListBodyContainer {
+	display: block;
+	background-color: rgba(0, 0, 255, 0.39);
+}
+
+.SetupGuideList {
+	width: 40vw;
+	max-width: 300px;
+	padding: 5px 0;
+	border: 1px solid black;
+}
+
+.SetupGuideListHead {
+	@extend .SetupGuideList;
+	font-weight: bold;
+}
+
+.SetupGuideListIcon {
+	@extend .Icon;
+	width: 10vw !important;
+	height: 25px;
+	padding: 2px 3px;
+	border: 1px solid black;
+	color: rgba(0, 0, 0, 0.787);
+}
+
+.SetupGuideListIconHead {
+	display: block;
+	width: 10vw;
+	padding: 5px 3px;
+	font-weight: bold;
+	border: 1px solid black;
+}
+
+.Add {
+	box-sizing: content-box !important;
+	margin-bottom: 10px;
+	padding: 5px 10px;
+	font-size: 1.5rem !important;
+}
+
+.AddMob {
+	@extend .Add;
+	float: left !important;
+	margin-top: 20px;
+	margin-left: 8px;
+}
+
+.Save {
+	@extend .Add;
+	width: auto;
+}
+
+.WorkingTimeContainer {
+	@include RoundBottomBorders(7px);
+	display: flex;
+	flex-direction: column;
+	box-sizing: border-box;
+	position: relative;
+	width: 100%;
+	max-width: 800px;
+	height: auto;
+	margin: auto;
+	padding: 5px;
+	overflow: hidden;
+	background-color: $base-cal-font-color;
+}
+
+.WorkingTimeContainerMob {
+	@extend .WorkingTimeContainer;
+	display: block;
+	flex-direction: unset;
+	overflow-y: auto;
+	height: 60vh;
+	border-bottom: 5px ridge orange;
+}
+
+.DayTitleMob {
+	width: 8vw;
+	p {
+		align-self: center;
+		justify-self: center;
+		margin: 0 !important;
+		padding: 0 1px !important;
+		font-size: 0.9rem !important;
+	}
+}
+
+.WorkingTimeHeader {
+	@include RoundTopBorders(7px);
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	box-sizing: border-box;
+	width: 100%;
+	max-width: 800px;
+	height: auto;
+	margin: auto;
+	padding: 5px;
+	background-color: $sidedrawer-background-color;
+	input[type='button'] {
+		margin-left: 10px;
+		height: 30px;
+		font-size: 1rem;
+	}
+	select {
+		margin-left: 10px;
+		color: white;
+		border: 3px ridge gray;
+		background-color: rgba($header-background-color, 0.8);
+		&:focus {
+			border: 3px ridge rgba($base-orange-color, 0.7);
+		}
+	}
+}
+
+.WorkingTimeHeaderMob {
+	@extend .WorkingTimeHeader;
+	.Icon {
+		display: flex;
+		height: 30px !important;
+		margin-left: 0;
+		padding: 3px 5px;
+		font-size: 1.5rem;
+		border: 1px inset white;
+		border-radius: 12px;
+		box-shadow: 3px 3px 3px rgba(68, 68, 68, 0.6);
+		-moz-box-shadow: 3px 3px 3px rgba(68, 68, 68, 0.6);
+		-webkit-box-shadow: 3px 3px 3px rgba(68, 68, 68, 0.6);
+		transition: all 402ms cubic-bezier(0.68, -0.75, 0.265, 1.75);
+		-webkit-transition: all 402ms cubic-bezier(0.68, -0.75, 0.265, 1.75);
+		color: $base-orange-color;
+		background-image: $calendar-weeks-button-bg;
+	}
+}
+
+.WorkingTimeHead {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	div {
+		height: auto;
+		box-sizing: border-box;
+		padding: 5px 0;
+		font-size: 1rem;
+		border: 1px solid black;
+		background-color: rgba($base-orange-color, 0.4);
+	}
+}
+
+.WorkingTimeBody {
+	display: flex;
+	flex-direction: row;
+}
+
+.WorkingTimeBodyMob {
+	display: flex;
+	flex-direction: column;
+}
+
+.WorkingTimeBodyBlockMob {
+	display: flex;
+	flex-direction: row;
+	border: 1px solid black;
+}
+
+.WorkingTimeDays {
+	display: flex;
+	flex-direction: column;
+	width: 7vw;
+	border-right: 1px solid black;
+	background-color: rgba($base-orange-color, 0.4);
+	div {
+		@include flexBoxCenter;
+		width: 100%;
+		box-sizing: border-box;
+		width: 100%;
+		height: 47px;
+		border: 1px solid black;
+	}
+}
+
+.WorkingTimeDaysMob {
+	@include flexBoxCenter;
+	display: flex;
+	flex-direction: column;
+	border-right: 1px solid black;
+	background-color: rgba($base-orange-color, 0.4);
+	p {
+		width: 9.5vw;
+		font-size: 1.2rem !important;
+		transform: rotate(-90deg);
+	}
+}
+
+.WorkingTimeBlock {
+	display: flex;
+	flex-direction: column;
+	width: 30vw;
+	div {
+		border: 1px solid black;
+		justify-self: center;
+		padding: 5px;
+	}
+}
+
+.WorkingTimeBlockMob {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
+
+.WorkingTimePairsContainer {
+	@include flexBoxCenter;
+	display: flex;
+	flex-direction: row;
+	box-sizing: border-box;
+	height: 47px;
+	input {
+		font-size: 1rem;
+		@media screen and (max-width: $small) {
+			font-size: 1rem;
+			height: 2rem;
+		}
+	}
+}
+
+.WorkingTimePairsContainerMob {
+	@extend .WorkingTimePairsContainer;
+	flex-direction: row;
+}
+
+.WorkingTimePairs {
+	display: inline-block;
+	width: 12vw !important;
+	min-width: 61px !important;
+	max-width: 100px !important;
+	height: 25px;
+	cursor: pointer;
+	color: $base-orange-color;
+	box-shadow: none;
+	background-color: $header-background-color;
+}
+
+.WorkingTimePairsMob {
+	@extend .WorkingTimePairs;
+	width: 34vw !important;
+	max-width: 40vw !important;
+	display: block;
+}
+
+.WorkingTimePairsLine {
+	font-size: 2rem;
+}
+
+.WorkingTimeAbsence {
+	display: flex;
+	flex-direction: column;
+	width: 33vw;
+	div {
+		justify-self: center;
+		box-sizing: border-box;
+		height: 47px;
+		padding: 2px 2px;
+		border: 1px solid black;
+		overflow: hidden;
+	}
+}
+
+.WorkingTimeAbsenceMob {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	div {
+		justify-self: center;
+		box-sizing: border-box;
+		height: 47px;
+		padding: 2px 2px;
+		border: 1px solid black;
+		overflow: hidden;
+	}
+}
+
+.AbsencePairsContainer {
+	@include flexBoxCenter;
+	display: flex;
+	flex-direction: row;
+	height: 47px;
+	width: 100%;
+	background-color: bisque;
+}
+
+.AbsenceRadioContainer {
+	display: flex;
+	flex-direction: column;
+	margin-top: -2px;
+	border: none !important;
+}
+
+.AbsenceRadioContainerMob {
+	@extend .AbsenceRadioContainer;
+	margin: 0;
+	padding: 15px;
+}
+
+.Radio_p_Container {
+	display: flex;
+	flex-direction: row;
+	border: none !important;
+	p {
+		font-size: 0.78rem;
+		margin: 3px 0 0 20px;
+		@media screen and (max-width: $small) {
+			font-size: 0.6rem;
+		}
+	}
+}
+
+.Radio_p_ContainerMob {
+	@extend .Radio_p_Container;
+	padding: 3px;
+	p {
+		font-size: 0.8rem;
+	}
+}
+
+.AbsenceRadiolbl {
+	display: block;
+	position: relative;
+	padding-left: 0;
+	margin-bottom: 12px;
+	cursor: pointer;
+	font-size: 22px;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.AbsenceRadiolbl input {
+	position: absolute;
+	opacity: 0;
+	cursor: pointer;
+	height: 0;
+	width: 0;
+}
+
+.AbsenceCheckmark {
+	position: absolute;
+	height: 16px;
+	width: 16px;
+	background: gray;
+	border-radius: 50%;
+	border: none;
+}
+
+/* On mouse-over, add a grey background color */
+.AbsenceRadiolbl:hover input ~ .AbsenceCheckmark {
+	background: gray;
+}
+
+/* When the radio button is checked, add a blue background */
+.AbsenceRadiolbl input:checked ~ .AbsenceCheckmark {
+	background: gray;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.AbsenceCheckmark:after {
+	content: '';
+	position: absolute;
+	display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.AbsenceRadiolbl input:checked ~ .AbsenceCheckmark:after {
+	display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.AbsenceRadiolbl .AbsenceCheckmark:after {
+	top: 5px;
+	left: 5px;
+	width: 6px;
+	height: 6px;
+	border-radius: 50%;
+	background: rgba($base-orange-color, 0.8);
+}
+
+.Radio {
+	cursor: pointer;
+	margin: 0 10px 0 10px;
+	border-radius: 50%;
+	z-index: 9;
+	opacity: 1;
+}
+
+.PickerCheckBox + label {
+	height: 20px !important;
+	width: 20px !important;
+	top: 3px;
+	margin-right: 0.5rem;
+	border: none;
+	cursor: pointer;
+	z-index: 1000;
+	outline: none;
+	transition: all 0.15s ease-out 0s;
+	color: #fff;
+	background-color: #cbd1d8;
+	&:before {
+		content: 'x';
+		display: block;
+		position: absolute;
+		height: 20px !important;
+		width: 20px !important;
+		font: {
+			size: 20px !important;
+			weight: bold;
+		}
+		cursor: pointer;
+		text-align: center;
+		line-height: 20px !important;
+		color: red;
+		background: {
+			color: #d0cccb;
+			position: 0 -15px;
+		}
+	}
+	&:after {
+		content: ' ';
+		background: {
+			color: #fffdfd;
+		}
+	}
+}
+
+.PickerCheckBox:checked + label {
+	&:before {
+		content: '✔';
+		display: inline-block;
+		position: absolute;
+		height: 20px !important;
+		width: 20px !important;
+		margin: 0 0 0 -8px !important;
+		font: {
+			size: 20px;
+			weight: bold;
+		}
+		text-align: center;
+		line-height: 20px !important;
+		color: green;
+		background-color: $base-orange-color;
+	}
+	&:after {
+		content: '';
+		display: block;
+		position: relative;
+		z-index: 100;
+		background-color: #40e0d0;
+	}
+}

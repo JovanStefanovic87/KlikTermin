@@ -1,0 +1,367 @@
+@import '../../scss/variables.scss';
+
+.Calendar {
+  display: flex;
+  flex-direction: row;
+  height: auto;
+  overflow: hidden;
+  box-sizing: border-box;
+  box-shadow: $table-shadow;
+  background-color: transparent;
+}
+
+.calLeftTable {
+  display: block;
+  float: left;
+  width: 49px;
+  height: 80vh;
+  box-sizing: border-box;
+  border-collapse: collapse;
+  color: $base-cal-font-color;
+  z-index: 1;
+  thead {
+    top: -1px;
+    z-index: 2;
+    tr {
+      display: inline-block;
+      th {
+        box-sizing: border-box;
+        border: 1px $base-calendar-border {
+          bottom: 3px $base-calendar-border;
+          right: 3px $base-calendar-border;
+        }
+        padding: 5px 5px;
+        background-color: black;
+      }
+    }
+  }
+  tbody {
+    display: inline-block;
+    height: 78vh;
+    padding-bottom: 35px;
+    overflow-y: hidden;
+    z-index: 1;
+    tr {
+      display: inline-block;
+      td {
+        height: 150px;
+        padding: 20px 2px;
+        box-sizing: border-box;
+        font-weight: bold;
+        border: 1px $base-calendar-border {
+          right: 3px $base-calendar-border;
+        }
+        background-color: $calendar-time_day-color;
+      }
+    }
+  }
+}
+
+.calRightTable {
+  display: block;
+  float: left;
+  position: relative;
+  height: 87vh;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  border-collapse: collapse;
+  color: $base-cal-font-color;
+  thead {
+    display: block;
+    position: sticky;
+    overflow: hidden;
+    top: 0;
+    z-index: 3;
+    tr {
+      display: inline-block;
+      width: 1700px;
+      th {
+        width: 250px;
+        padding: 5px 20px;
+        border: 1px $base-calendar-border {
+          bottom: 3px $base-calendar-border;
+        }
+        box-sizing: border-box;
+
+        background-color: black;
+      }
+    }
+  }
+  tbody {
+    display: block;
+    position: relative;
+    height: 81vh;
+    z-index: 2;
+    overflow: {
+      y: scroll;
+      y: overlay;
+    }
+    padding-bottom: 20px;
+    margin-bottom: -25px;
+    tr {
+      display: inline-block;
+      width: 1700px;
+      td {
+        width: 300px;
+        height: 150px;
+      }
+      p {
+        position: absolute;
+        flex-flow: column;
+        width: 130px;
+        margin: -20px 0 0 10px;
+        font-size: 20px;
+        text-align: center;
+        color: rgba(255, 255, 255, 0.582);
+      }
+    }
+  }
+}
+
+.CellEnabled {
+  box-sizing: border-box;
+  border: 1px $base-calendar-border;
+  padding: 20px 40px;
+  contain: layout;
+  cursor: pointer;
+  background-image: $base-background-color;
+  &:hover {
+    background-image: $calendar-weeks-button-bg;
+  }
+}
+
+.CellDisabled {
+  box-sizing: border-box;
+  border: 1px $base-calendar-border;
+  padding: 20px 40px;
+  contain: layout;
+  pointer-events: none;
+  background-color: black;
+}
+
+.Appointment {
+  position: absolute;
+  box-sizing: border-box;
+  flex-direction: column;
+  justify-content: center;
+  width: 241px;
+  margin: -74px 0 0 -40px;
+  padding: 2px;
+  font-size: 20px;
+  text-align: center;
+  white-space: nowrap;
+  transition: $transition;
+  overflow: hidden;
+  z-index: 1;
+  background-image: $calendar-event-bg;
+  border: 3px ridge seashell {
+    radius: 10px;
+  }
+  &:hover {
+    border: 3px ridge red;
+  }
+  h5 {
+    text-align: center;
+    font-weight: normal;
+    margin: 0;
+    word-wrap: break-word;
+  }
+  .OptionsContainer {
+    flex-direction: row;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    color: transparent;
+    z-index: 999;
+    .IconContainer {
+      @include RoundBottomBorders(5px);
+      @include RoundTopBorders(5px);
+      @include flexBoxCenter;
+      margin-left: -1px;
+      box-sizing: border-box;
+      position: relative;
+      border: 1px solid white;
+      height: 100%;
+      width: 50%;
+      background-color: rgba(0, 0, 0, 0.486);
+      border: 1px solid black;
+      &:nth-child(1) {
+        color: rgba(red, 0.3);
+        font-size: 5rem;
+        .OptionIcon {
+          &:hover {
+            color: rgba(red, 0.6);
+          }
+        }
+      }
+      &:nth-child(2) {
+        color: rgba($base-orange-color, 0.3);
+        font-size: 5rem;
+        .OptionIcon {
+          &:hover {
+            color: rgba($base-orange-color, 0.6);
+          }
+        }
+      }
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.6);
+      }
+      /* .OptionIcon {
+                color: rgba(128, 128, 128, 0.5);
+                font-size: 5rem;
+                &:hover {
+                    color: rgba(red, 0.5);
+                }
+                &:nth-child(odd) {
+                    color: rgba($base-orange-color, 0.5);
+                }
+            } */
+    }
+  }
+}
+
+.HrLineAppointment {
+  display: block;
+  width: 100%;
+  height: 1px;
+  margin: 4px auto;
+  background-image: $Appointment-line-color;
+  border: none;
+}
+
+.CalNav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 2px 0;
+  input {
+    position: relative;
+    height: 2rem;
+    padding: 0 0.6em;
+  }
+  h1 {
+    margin: auto;
+    color: darken($base-cal-font-color, 15%);
+  }
+  p {
+    margin: auto;
+    font-size: 1rem;
+    color: darken($base-cal-font-color, 15%);
+  }
+}
+
+@media screen and (min-width: 1900px) {
+  .calRightTable {
+    tbody {
+      padding-bottom: 0;
+      margin-bottom: 0;
+    }
+  }
+  .calLeftTable {
+    tbody {
+      padding-bottom: 28px;
+      margin-bottom: -28px;
+    }
+  }
+}
+
+@media screen and (max-height: 820px) {
+  .calLeftTable {
+    height: 70vh;
+    tbody {
+      height: 68vh;
+      padding-bottom: 25px;
+      margin-bottom: -25px;
+    }
+  }
+
+  .calRightTable {
+    height: 77vh;
+    tbody {
+      height: 71vh;
+      padding-bottom: 5px;
+      margin-bottom: -25px;
+    }
+  }
+}
+
+@media screen and (max-height: 700px) {
+  .calLeftTable {
+    height: 75vh;
+    tbody {
+      height: 73vh;
+      padding-bottom: 25px;
+      margin-bottom: -25px;
+    }
+  }
+
+  .calRightTable {
+    height: 82vh;
+    tbody {
+      height: 76vh;
+      padding-bottom: 5px;
+      margin-bottom: -25px;
+    }
+  }
+}
+
+@media screen and (max-height: 600px) {
+  .calLeftTable {
+    height: 60vh;
+    tbody {
+      height: 58vh;
+      padding-bottom: 25px;
+      margin-bottom: -25px;
+    }
+  }
+
+  .calRightTable {
+    height: 67vh;
+    tbody {
+      height: 61vh;
+      padding-bottom: 5px;
+      margin-bottom: -25px;
+    }
+  }
+}
+
+@media screen and (max-height: 300px) {
+  .calLeftTable {
+    height: 40vh;
+    tbody {
+      height: 38vh;
+      padding-bottom: 25px;
+      margin-bottom: -25px;
+    }
+  }
+
+  .calRightTable {
+    height: 47vh;
+    tbody {
+      height: 41vh;
+      padding-bottom: 5px;
+      margin-bottom: -25px;
+    }
+  }
+}
+
+@media screen and (max-height: 200px) {
+  .calLeftTable {
+    height: 35vh;
+    tbody {
+      height: 33vh;
+      padding-bottom: 25px;
+      margin-bottom: -25px;
+    }
+  }
+
+  .calRightTable {
+    height: 42vh;
+    tbody {
+      height: 36vh;
+      padding-bottom: 5px;
+      margin-bottom: -25px;
+    }
+  }
+}

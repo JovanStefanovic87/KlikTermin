@@ -1,0 +1,373 @@
+@import '../../scss/variables.scss';
+
+.HomePageBody {
+    background-color: $alt-background-color;
+}
+
+.SliderContainer {
+    display: flex;
+    justify-content: center;
+    align-items: top;
+    position: relative;
+    width: 100%;
+    height: 32vw;
+    margin-top: 3px;
+    background-color: $alt-background-color;
+    overflow: hidden;
+    img {
+        width: 100vw !important;
+    }
+    &:after {
+        @include line;
+        top: 31.8vw;
+    }
+}
+
+.ArrowLeft {
+    @include Arrow();
+    left: 0;
+    margin-left: 10px;
+    font-size: 3rem;
+    z-index: 3;
+    color: azure;
+}
+
+.ArrowLeftMob {
+    @include Arrow();
+    left: 0;
+    margin-left: 10px;
+    font-size: 2rem;
+    z-index: 3;
+    color: red;
+}
+
+.ArrowRight {
+    @include Arrow();
+    left: 100%;
+    margin-left: -30px;
+    font-size: 3rem;
+    z-index: 3;
+    color: azure;
+}
+
+.ArrowRightMob {
+    @include Arrow();
+    left: 100%;
+    margin-left: -30px;
+    font-size: 2rem;
+    z-index: 3;
+    color: red;
+}
+
+.slideOld {
+    position: absolute;
+    transition-duration: 3s;
+    opacity: 0;
+}
+
+.slideNew {
+    position: absolute;
+    opacity: 0;
+}
+
+.slideAuto {
+    position: absolute;
+    opacity: 1;
+    animation: next 3s;
+}
+
+.slideNext {
+    position: absolute;
+    opacity: 1;
+    animation: next 3s;
+}
+
+@keyframes next {
+    0% {
+        margin-left: -200%;
+    }
+    100% {
+        margin-left: 0;
+    }
+}
+
+.slidePrev {
+    position: absolute;
+    opacity: 1;
+    animation: prev 3s;
+}
+
+@keyframes prev {
+    0% {
+        margin-left: 200%;
+    }
+    100% {
+        margin-left: 0;
+    }
+}
+
+.radioContainer {
+    display: inline-block;
+    position: absolute;
+    margin-top: 27.5vw;
+    border-radius: 50%;
+    border: none;
+    z-index: 3;
+}
+
+.Title {
+    display: block;
+    position: relative;
+    margin: 0;
+    padding: 15px 0 0.5% 0;
+    text-align: center;
+    cursor: default;
+    color: $base-orange-color;
+}
+
+.TitleMob {
+    display: block;
+    position: relative;
+    margin: 0;
+    padding: 15px 0 0.5% 0;
+    font-size: 1.8rem;
+    text-align: center;
+    cursor: default;
+    color: $base-orange-color;
+}
+
+.OurServicesContainer {
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    cursor: default;
+    .OurServices {
+        display: block;
+        box-sizing: border-box;
+        float: left;
+        width: 31.2%;
+        background-image: $index-booking-button-bg;
+        margin: 1.6% 0 0 1.6%;
+        padding: 5px 7px;
+        height: 470px;
+        border: none {
+            radius: 10px;
+        }
+        box-shadow: #101010 0 0 8px;
+        @media screen and (min-width: 1000px) {
+            height: 450px;
+        }
+        @media screen and (min-width: 1200px) {
+            height: 420px;
+        }
+        @media screen and (min-width: 1400px) {
+            height: 370px;
+        }
+        @media screen and (min-width: 1600px) {
+            height: 345px;
+        }
+        .Icon {
+            display: block;
+            position: relative;
+            margin: 0;
+            text-align: center;
+            font-size: 8rem;
+            color: rgb(150, 150, 150);
+        }
+        .txtContainer {
+            display: block;
+        }
+        h4 {
+            font-size: 2rem;
+            color: $alt-background-color;
+            margin: 3px 0;
+            text-align: center;
+            display: block;
+        }
+        p {
+            font-size: 1.34rem;
+            color: rgba(223, 223, 223, 0.767);
+            text: {
+                align: center;
+                shadow: 0px 1px 0px rgba(255, 255, 255, 0.3),
+                    0px -1px 0px rgba(0, 0, 0, 0.7);
+            }
+            font-weight: lighter;
+            margin: 10px 0;
+        }
+    }
+    .OurServicesMob {
+        display: block;
+        box-sizing: border-box;
+        width: auto;
+        height: auto;
+        background-image: $index-booking-button-bg;
+        margin: 1.6% 0 0 1.6%;
+        padding: 5px 7px;
+        border: none {
+            radius: 10px;
+        }
+        box-shadow: #101010 0 0 8px;
+        .Icon {
+            display: block;
+            position: relative;
+            margin: 0;
+            text-align: center;
+            font-size: 3rem;
+            color: rgb(150, 150, 150);
+        }
+        .txtContainer {
+            display: block;
+        }
+        h4 {
+            font-size: 1.5rem;
+            color: $alt-background-color;
+            margin: 3px 0;
+            text-align: center;
+            display: block;
+        }
+        p {
+            font-size: 1rem;
+            color: rgba(223, 223, 223, 0.767);
+            text: {
+                align: center;
+                shadow: 0px 1px 0px rgba(255, 255, 255, 0.3),
+                    0px -1px 0px rgba(0, 0, 0, 0.7);
+            }
+            font-weight: lighter;
+            margin: 10px 0;
+        }
+    }
+}
+
+.Contact {
+    display: block;
+    position: relative;
+    margin-top: -20px;
+    text-align: unset;
+    z-index: 1;
+    background-color: transparent;
+    h2 {
+        margin-top: 25px;
+        text-align: center;
+        color: $base-background-color;
+    }
+    p {
+        text-align: center;
+        color: $base-orange-color;
+        strong {
+            color: rgba(255, 255, 255, 0.76);
+        }
+    }
+    input[type='text'],
+    input[type='number'],
+    .Contact_Input {
+        display: block;
+        width: 80vw;
+        max-width: 500px;
+        margin: 15px auto;
+        font-size: 1.3em;
+    }
+    .Message {
+        display: block;
+        width: 80vw;
+        height: 400px;
+        max-width: 500px;
+        margin: 15px auto 0 auto;
+        font: {
+            size: 1.2em;
+            family: inherit;
+        }
+    }
+    .Submit {
+        @include button;
+        display: block;
+        margin: 20px auto 30px auto;
+        width: 30%;
+        max-width: 400px;
+        height: 35px;
+    }
+}
+
+.ContactMob {
+    display: block;
+    position: relative;
+    margin-top: -40px;
+    text-align: unset;
+    z-index: 1;
+    background-color: transparent;
+    h2 {
+        margin-top: 20px;
+        text-align: center;
+        color: $base-background-color;
+    }
+    .InfoBg {
+        display: block;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 1px 0;
+        background-color: #101010;
+    }
+    p {
+        text-align: center;
+        color: $base-orange-color;
+        strong {
+            color: rgba(255, 255, 255, 0.76);
+        }
+    }
+    h3 {
+        margin-top: 20px;
+        font-size: 20px;
+        text-align: center;
+        color: $base-background-color;
+    }
+    input[type='text'],
+    input[type='number'],
+    .Contact_Input {
+        display: block;
+        width: 95vw;
+        max-width: 500px;
+        margin: 15px auto;
+        font-size: 1.3em;
+    }
+    .Message {
+        display: block;
+        width: 95vw;
+        height: 400px;
+        max-width: 500px;
+        margin: 15px auto 0 auto;
+        font: {
+            size: 1.2em;
+            family: inherit;
+        }
+    }
+    .Submit {
+        @include button;
+        display: block;
+        margin: 20px auto 30px auto;
+        width: 50%;
+        max-width: 300px;
+        height: 45px;
+    }
+}
+
+.RegLogButton {
+    display: block;
+    position: fixed;
+    box-sizing: border-box;
+    width: 100vw;
+    height: 100px;
+    bottom: 0;
+    padding: 20px 10px;
+    z-index: 9;
+    transition: ease-in-out 1s;
+    background-color: $header-background-color;
+    input {
+        display: block;
+        width: 48%;
+        height: 100%;
+        margin: auto;
+        font-size: 1.2rem;
+    }
+}

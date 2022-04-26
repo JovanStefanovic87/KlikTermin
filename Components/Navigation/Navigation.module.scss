@@ -1,0 +1,645 @@
+@import '../../scss/variables.scss';
+
+.Header {
+    display: flex;
+    position: fixed;
+    height: 56px;
+    width: 100%;
+    top: 0;
+    left: 0;
+    justify-content: left;
+    align-items: center;
+    padding: 0 20px;
+    box-sizing: border-box;
+    z-index: 90;
+    background-color: $header-background-color;
+    &:after {
+        content: '';
+        position: absolute;
+        background-image: $orange-line-color;
+        width: 100%;
+        height: 3px;
+        left: 0;
+        top: 56px;
+    }
+}
+
+.HamburgerButton {
+    display: flex;
+    width: 30px;
+    height: 30px;
+    margin: 0;
+    padding: 3px;
+    flex: {
+        direction: row;
+        wrap: wrap;
+    }
+    justify-content: space-between;
+    align-items: center;
+    border: groove 1px rgb(255, 255, 255);
+    border-radius: 15%;
+    box-shadow: 2px 2px 2px 2px rgba(93, 80, 80, 0.274);
+    cursor: pointer;
+    outline: none;
+    background-color: rgb(185, 185, 185);
+    &:hover {
+        box-shadow: 2px 2px 2px 2px rgba(104, 70, 70, 0.9);
+    }
+    &:active {
+        border: groove 2px rgba(0, 0, 0, 0.9);
+        box-shadow: 2px 2px 2px 2px rgba(14, 13, 13, 0.1);
+    }
+    div {
+        display: flex;
+        width: 25px;
+        height: 4px;
+        margin: auto;
+        flex-direction: row;
+        background-color: rgb(44, 44, 44);
+    }
+}
+
+.IndexToolbarNavBtn {
+    display: block;
+    position: fixed;
+    margin-top: -55px;
+    padding: 3px;
+    box-sizing: border-box;
+    z-index: 90;
+    a {
+        font-size: 1.3rem;
+        text-decoration: none;
+        color: rgb(231, 231, 231);
+    }
+    &:hover {
+        a {
+            color: $base-orange-color;
+        }
+    }
+    &:active {
+        background-image: $index-booking-button-bg;
+    }
+}
+
+.IndexBookingButton {
+    display: block;
+    position: fixed;
+    margin: -55px 0 0 10px;
+    padding: 3px;
+    box-sizing: border-box;
+    border: 3px solid white;
+    border-radius: 5px;
+    z-index: 90;
+    transition: $transition ease-in;
+    a {
+        font-size: 1.3rem;
+        text-decoration: none;
+        color: white;
+    }
+    &:hover {
+        border: 3px solid $base-orange-color;
+        box-shadow: 0 0 2px 1px rgba($base-orange-color, 0.5);
+    }
+    &:active {
+        border: 3px solid $base-orange-color;
+        a {
+            color: $base-orange-color;
+        }
+    }
+}
+
+.logNotifPc {
+    display: flex;
+    margin: -55px 0 0 10px;
+    font-size: 13px;
+    z-index: 999;
+    color: rgba($base-orange-color, 0.7);
+}
+
+.SideDrawerMob {
+    display: block;
+    position: fixed;
+    width: 280px;
+    height: 100%;
+    max-width: 70%;
+    left: 0;
+    top: 0;
+    padding: 0 1px;
+    box-sizing: border-box;
+    overflow: auto;
+    z-index: 500;
+    transition: transform 0.3s ease-out;
+    background-color: $sidedrawer-background-color;
+}
+
+.SideDrawerPC {
+    display: block;
+    position: fixed;
+    width: 250px;
+    max-width: 70%;
+    height: 100%;
+    left: -200px;
+    top: 56px;
+    padding: 32px 16px;
+    overflow-y: hidden;
+    z-index: 300;
+    box-sizing: border-box;
+    transition: transform 0.8s ease-in;
+    background-color: $sidedrawer-background-color;
+    &:hover {
+        transform: translateX(200px);
+    }
+}
+
+.NavServiceProviderItemsMob {
+    display: flex;
+    height: 100%;
+    margin: 2px 0;
+    padding: 0;
+    list-style: none;
+    flex-flow: column;
+    align-items: stretch;
+}
+
+.NavServiceProviderItemsPC {
+    display: flex;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    flex-flow: row;
+    align-items: center;
+}
+
+.NavItemServiceProviderMob {
+    display: block;
+    float: left;
+    height: 100%;
+    width: 50%;
+    margin: auto;
+    box-sizing: border-box;
+    border: 1px solid black;
+    background-color: $sidedrawer-background-color;
+    &:active {
+        box-shadow: 1px 1px 1px 1px inset black;
+        background-color: darken($sidedrawer-background-color, 5);
+    }
+    a {
+        height: 100%;
+        padding: 16px 10px;
+        text-align: right;
+        border-bottom: 4px solid transparent;
+        color: white;
+        &a:hover,
+        &a:active,
+        &a.active {
+            border-bottom: 4px solid #40a4c8;
+            color: white;
+            background-color: #8f5c2c;
+        }
+    }
+    p {
+        margin: -17px 0 0 0;
+        padding: 0 0 5px 0;
+        text-align: center;
+        color: gray;
+    }
+}
+
+.NavItemServiceProviderPC {
+    display: flex;
+    height: 100%;
+    width: auto;
+    margin: auto;
+    a {
+        height: 100%;
+        padding: 16px 10px;
+        text-align: right;
+        border-bottom: 4px solid transparent;
+        color: white;
+        &a:hover,
+        &a:active,
+        &a.active {
+            border-bottom: 4px solid #40a4c8;
+            color: white;
+            background-color: #8f5c2c;
+        }
+    }
+}
+
+.sideDrawerIconMob {
+    display: block;
+    position: relative;
+    height: 100px;
+    left: 0;
+    margin: auto;
+    color: rgb(150, 150, 150);
+}
+
+.sideDrawerIconPC {
+    display: inline-block;
+    position: absolute;
+    left: 200px;
+    margin: -45px 0 0 9px;
+    font-size: 35px;
+    color: rgb(150, 150, 150);
+}
+
+.ServiceProviderLogoMob {
+    display: block;
+    position: relative;
+    width: 180px;
+    margin: 10px auto;
+    cursor: pointer;
+    img {
+        width: 260px;
+        margin-left: -40px;
+    }
+    p {
+        margin: auto;
+        text-align: center;
+        word-break: break-word;
+        color: white;
+    }
+}
+
+.ServiceProviderLogoPC {
+    display: block;
+    position: relative;
+    width: 180px;
+    left: -10px;
+    margin: 20px 0 0 0;
+    cursor: pointer;
+    img {
+        width: 180px;
+    }
+    p {
+        text-align: center;
+        word-break: break-all;
+        color: white;
+    }
+}
+
+.NavItemHomepage {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    box-sizing: border-box;
+    a {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+        text-decoration: none;
+        color: #8f5c2c;
+        &a:hover,
+        &a:active,
+        &a.active {
+            color: #40a4c8;
+        }
+    }
+}
+
+@media (min-width: 500px) {
+    .NavItemHomepage {
+        display: flex;
+        height: 100%;
+        width: auto;
+        margin: 0;
+        align-items: center;
+        a {
+            height: 100%;
+            padding: 16px 10px;
+            border-bottom: 4px solid transparent;
+            color: white;
+            &a:hover,
+            &a:active,
+            &a.active {
+                border-bottom: 4px solid #40a4c8;
+                color: white;
+                background-color: #8f5c2c;
+            }
+        }
+    }
+}
+
+.sideDrawerIconPC {
+    display: inline-block;
+    position: absolute;
+    left: 200px;
+    margin: -45px 0 0 9px;
+    font-size: 35px;
+    color: rgb(150, 150, 150);
+}
+
+.sideDrawerIconMob {
+    display: block;
+    position: relative;
+    left: 0;
+    margin: auto;
+    font-size: 60px;
+    color: rgb(150, 150, 150);
+}
+
+.sideDrawerButton {
+    display: block;
+    position: relative;
+    width: 150px;
+    height: 40px;
+    right: 0;
+    bottom: 5px;
+    margin: 20px 0 0 20px;
+    padding: 0 20px;
+}
+
+.sideDrawerButtonActive {
+    display: block;
+    position: relative;
+    width: 150px;
+    height: 40px;
+    right: 0;
+    bottom: 5px;
+    margin: 20px 0 0 20px;
+    padding: 0 20px;
+    background: #242424;
+    &:hover {
+        background: #242424;
+    }
+}
+
+.PrepaidStatus {
+    display: block;
+    position: relative;
+    width: auto;
+    height: auto;
+    margin: 0 0 0 2vw;
+    font-size: 18px;
+    text-align: center;
+    box-sizing: border-box;
+    border-radius: 5px;
+    color: white;
+    background-color: black;
+    div {
+        display: inline-block;
+        width: auto;
+        padding: 1px 5px 5px 5px;
+        border-radius: 5px;
+        background-color: black;
+    }
+    label {
+        display: inline-block;
+        height: 20px;
+        width: auto;
+        margin: 5px 0 0 0;
+        border-radius: 5px;
+        background-color: black;
+    }
+}
+
+.LogoPC {
+    height: 60px;
+    cursor: pointer;
+}
+
+.LogoPC {
+    img {
+        height: 83%;
+        padding: 4px 0;
+    }
+}
+
+.LogoMob {
+    height: 30px;
+    cursor: pointer;
+    img {
+        height: 100%;
+        padding: 4px 0;
+    }
+}
+
+/* .EmployeeSelect {
+	min-width: 200px;
+	color: $base-orange-color;
+	border-color: transparent !important;
+	background-color: $calendar-time_day-color;
+	&:-ms-expand {
+		display: none;
+	}
+	&:hover {
+		background-image: url("data:image/svg+xml;utf8,<svg fill='orange' height='100%' viewBox='5 6 12 12' width='100%' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+	}
+	&:focus {
+		border-color: orange !important;
+		box-shadow: #fc0 0 0 3px;
+		color: black;
+		background: {
+			image: url("data:image/svg+xml;utf8,<svg fill='black' height='100%' viewBox='5 6 12 12' width='100%' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+			color: $select-bg;
+		}
+	}
+	&:active {
+		background: {
+			image: url("data:image/svg+xml;utf8,<svg fill='black' height='100%' viewBox='5 6 12 12' width='100%' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+			color: $select-bg;
+		}
+	}
+	option {
+		border-top: #222 solid 1px;
+		background: gray;
+		color: black;
+	}
+} */
+
+.WrappedToolsContainer {
+    position: fixed;
+    flex-direction: row;
+    justify-content: center;
+    left: 0;
+    top: 50px;
+    width: 100vw;
+    height: calc(100vh - 50px);
+    z-index: 2;
+    background-color: gray;
+    .ButtonsPair {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        div {
+            @include flexBoxCenter;
+            height: 50vh;
+            width: 50vw;
+            font-size: 35vmin;
+            border: 1px solid black;
+        }
+    }
+}
+
+.WrappedToolsWithChkBox {
+    height: 40vh;
+    top: auto;
+    bottom: 0;
+    .ButtonsPair {
+        div {
+            height: 20vh;
+            width: 50vw;
+            font-size: 25vmin;
+            border: 1px solid black;
+        }
+    }
+}
+
+.ServiceSettingsContainer {
+    @include absoluteCenter;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    margin-top: 200px !important;
+    padding: 20px;
+    background-color: black;
+    z-index: 999999;
+    div {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        p {
+            font-size: 1.5rem;
+            color: white;
+        }
+        .addForSelectedService + label {
+            height: 20px !important;
+            width: 20px !important;
+            top: 3px;
+            margin-right: 0.5rem;
+            border: none;
+            cursor: pointer;
+            z-index: 1000;
+            outline: none;
+            transition: all 0.15s ease-out 0s;
+            color: #fff;
+            background-color: #cbd1d8;
+            &:before {
+                content: 'x';
+                display: block;
+                position: absolute;
+                height: 20px !important;
+                width: 20px !important;
+                font: {
+                    size: 20px !important;
+                    weight: bold;
+                }
+                cursor: pointer;
+                text-align: center;
+                line-height: 20px !important;
+                color: red;
+                background: {
+                    color: #d0cccb;
+                    position: 0 -15px;
+                }
+            }
+            &:after {
+                content: ' ';
+                background: {
+                    color: #fffdfd;
+                }
+            }
+        }
+
+        .addForSelectedService:checked + label {
+            &:before {
+                content: '✔';
+                display: inline-block;
+                position: absolute;
+                height: 20px !important;
+                width: 20px !important;
+                margin: 0 0 0 -20px !important;
+                font: {
+                    size: 26.66667px;
+                    weight: bold;
+                }
+                text-align: center;
+                line-height: 20px !important;
+                color: green;
+                background-color: $base-orange-color;
+            }
+            &:after {
+                content: '';
+                display: block;
+                position: relative;
+                z-index: 100;
+                background-color: #40e0d0;
+            }
+        }
+    }
+}
+
+.addForSelectedService + label {
+    height: 40px !important;
+    width: 40px !important;
+    top: 3px;
+    margin-right: 0.5rem;
+    border: none;
+    cursor: pointer;
+    z-index: 1000;
+    outline: none;
+    transition: all 0.15s ease-out 0s;
+    color: #fff;
+    background-color: #cbd1d8;
+    &:before {
+        content: 'x';
+        display: block;
+        position: absolute;
+        height: 40px !important;
+        width: 40px !important;
+        font: {
+            size: 30px !important;
+            weight: bold;
+        }
+        cursor: pointer;
+        text-align: center;
+        line-height: 40px !important;
+        color: red;
+        background: {
+            color: #d0cccb;
+            position: 0 -15px;
+        }
+    }
+    &:after {
+        content: ' ';
+        background: {
+            color: #fffdfd;
+        }
+    }
+}
+
+.addForSelectedService:checked + label {
+    &:before {
+        content: '✔';
+        display: inline-block;
+        position: absolute;
+        height: 40px !important;
+        width: 40px !important;
+        margin: 0 !important;
+        font: {
+            size: 26.66667px;
+            weight: bold;
+        }
+        text-align: center;
+        line-height: 40px !important;
+        color: green;
+        background-color: $base-orange-color;
+    }
+    &:after {
+        content: '';
+        display: block;
+        position: relative;
+        z-index: 100;
+        background-color: #40e0d0;
+    }
+}
+
+.AddForSelectedWrapperLeftAlign {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: flex-start !important;
+    height: 100% !important;
+}

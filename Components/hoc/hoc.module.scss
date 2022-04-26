@@ -1,0 +1,41 @@
+@import '../../scss/variables.scss';
+
+.Layout {
+	width: 100%;
+	height: auto;
+	background-color: $base-background-color;
+	&::-webkit-scrollbar-track {
+		border: 5px ridge rgb(255, 255, 255);
+		border-radius: 15px;
+		// border color does not support transparent on scrollbar
+		// border-color: transparent;
+		background-color: #b2bec3;
+	}
+
+	&::-webkit-scrollbar {
+		width: 15px;
+		background-color: transparent;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		border: 5px ridge rgb(65, 64, 64) {
+			radius: 10px;
+		}
+		background-color: $base-orange-color;
+		&:hover {
+			background-color: rgba($base-orange-color, 0.5);
+		}
+	}
+}
+
+.Main {
+	padding-top: 55px;
+}
+
+.OpenMob {
+	transform: translateX(0);
+}
+
+.CloseMob {
+	transform: translateX(-100%);
+}
